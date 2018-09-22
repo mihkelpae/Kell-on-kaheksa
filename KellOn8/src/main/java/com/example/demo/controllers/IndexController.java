@@ -2,6 +2,7 @@ package com.example.demo.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -15,8 +16,13 @@ public class IndexController {
     }
 
     @RequestMapping("/book/{id}")
-    public String getBootById(Model model, @PathVariable("id") Long id) {
+    public String getBookById(Model model, @PathVariable("id") Long id) {
         model.addAttribute("bookId", id);
         return "book";
+    }
+
+    @GetMapping("/home")
+    public  String home(){
+        return "homepage";
     }
 }

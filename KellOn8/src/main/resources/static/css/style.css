@@ -3,3 +3,8 @@ h1 {
     font-family: Times;
     font-size: 30px;
 }
+
+.myButton {
+    background-color: red;
+    padding: 12px;
+}
