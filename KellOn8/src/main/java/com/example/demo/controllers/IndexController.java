@@ -21,8 +21,4 @@ public class IndexController {
         return "book";
     }
 
-    @GetMapping("/home")
-    public  String home(){
-        return "homepage";
-    }
 }
