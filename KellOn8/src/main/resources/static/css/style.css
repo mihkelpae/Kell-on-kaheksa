@@ -1,17 +1,78 @@
-h1 {
-    color: red;
-    font-family: Times;
-    font-size: 30px;
+body {
+    background-color: #ffffff;
+    font-size: 112%;
+    font-family: Algerian;
+    text-allign: left;
+}
+.body {
+    margin: 0 auto;
+    width: 85%;
+    height: 100%;
+    clear: both
 }
 
-.myButton {
-    background-color: red;
-    padding: 12px;
+a {
+    text-decoration: none;
 }
 
-/* Header @index.html */
-header {
-    width: 100%;
-    height: 80px;
+a:link, a:visited {
+
+}
+
+a:hover {
+
+}
+
+.mainheader nav {
+    background-color: #FFFFFF;
+    height: 30px;
+
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+.mainheader nav ul {
+    list-style: none;
+    margin: 0 auto;
+}
+
+.mainheader nav ul li {
+    float: left;
+    display: inline;
+}
+
+.mainheader nav a:link, .mainheader nav a:visited {
+    color: lightgray;
+    display: inline-block;
+    padding: 3px 30px;
+    height: 24px;
+}
+
+.mainheader nav a:hover, .mainheader nav a:active,
+.mainheader nav .active a:link, .mainheader nav .active a:visited {
+    text-shadow: none;
     background-color: deepskyblue;
+    color: orange;
+}
+
+.logoJaPilt, .firmaNimi {
+    padding: 5%;
+    display: flex;
+    align-items: center;
+    font-size: 175%;
+    margin-left: 5%;
+}
+
+.homecontent, .hotProducts {
+    align-items: center;
+}
+
+.whatsHot {
+    margin: 0 auto;
+}
+.toaster1 {
+    padding: 40px;
+    margin: 0 auto;
+
 }

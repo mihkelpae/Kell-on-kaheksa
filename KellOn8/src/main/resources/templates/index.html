@@ -2,9 +2,42 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:include="fragments/head :: head"/>
 
-<body>
-    <h1 th:text="${text}"></h1>
-</body>
+<body class="body">
 
+    <header class="mainheader">
+        <nav><ul>
+            <li class="active"><a href="#">Kodu</a></li>
+            <li><a href="#">Tooted</a></li>
+            <li><a href="#">Meist</a></li>
+            <li><a href="#">Abi</a></li>
+        </ul></nav>
+    </header>
+
+
+    <div class="homecontent">
+        <div class="logoJaPilt">
+            <img src=http://www.clker.com/cliparts/n/v/t/V/0/e/8-o-clock-md.png>
+            <div class="firmaNimi">
+                <bold>Kell on kaheksa</bold>
+            </div>
+        </div>
+
+        <div class="hotProducts">
+            <div class="whatsHot">
+                <bold>Hetkel kuumad tooted</bold>
+            </div>
+            <div class="hotProductPictures">
+                <img class="toaster1" src=https://static1.nordic.pictures/3209457-thickbox_default/tss801ss-taoster.jpg width="200" height="200">
+
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="mainfooter">
+        <p>Copyright &copy; <a href="#" title="asd">google.com</a></p>
+    </footer>
+
+</body>
 
 </html>
