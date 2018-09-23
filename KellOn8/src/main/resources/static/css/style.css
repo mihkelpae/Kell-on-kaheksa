@@ -24,8 +24,8 @@ a:hover {
 }
 
 .mainheader nav {
-    background-color: #FFFFFF;
-    height: 30px;
+    background-color: white;
+    height: 50px;
 
     border-radius: 5px;
     -moz-border-radius: 5px;
@@ -42,11 +42,16 @@ a:hover {
     display: inline;
 }
 
-.mainheader nav a:link, .mainheader nav a:visited {
+.mainheader nav a:link, .mainheader nav a:visited, .mainheader nav .firma {
     color: lightgray;
     display: inline-block;
-    padding: 3px 30px;
-    height: 24px;
+    padding: 12px 30px;
+    height: 26px;
+}
+
+.mainheader nav .firma{
+    padding: 0px 30px;
+    color: black;
 }
 
 .mainheader nav a:hover, .mainheader nav a:active,
@@ -61,18 +66,19 @@ a:hover {
     display: flex;
     align-items: center;
     font-size: 175%;
-    margin-left: 5%;
+    margin: 0 auto;
 }
 
-.homecontent, .hotProducts {
-    align-items: center;
+.piltideTulp {
+    float: left;
+    width: 33%;
+}
+
+.hotProductPictures {
+    font-family: "Times New Roman";
 }
 
 .whatsHot {
     margin: 0 auto;
 }
-.toaster1 {
-    padding: 40px;
-    margin: 0 auto;
 
-}
