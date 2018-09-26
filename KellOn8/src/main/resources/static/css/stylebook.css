@@ -1,0 +1,26 @@
+body { padding-top: 70px; }
+
+.col {
+    padding-top: 3%;
+}
+.col-md-auto {
+    padding-top: 3%;
+}
+
+#homeLogoAndMotto {
+    padding-right: 10%;
+}
+
+#loginRegister {
+    padding-left: 10px;
+}
+
+#loginfields {
+    padding: 5px 5px;
+}
+
+.body {
+    padding: 2% 10%;
+    display: flex;
+    align-items: center;
+}
