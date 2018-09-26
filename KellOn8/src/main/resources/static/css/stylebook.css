@@ -19,8 +19,13 @@ body { padding-top: 70px; }
     padding: 5px 5px;
 }
 
-.body {
+.logo {
     padding: 2% 10%;
     display: flex;
     align-items: center;
+}
+
+.body {
+    padding: 2% 10%;
+    display: flex;
 }
