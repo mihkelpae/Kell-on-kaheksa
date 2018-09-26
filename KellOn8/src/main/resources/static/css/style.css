@@ -1,14 +1,39 @@
 body {
     background-color: #ffffff;
-    font-size: 112%;
+    font-size: 115%;
     font-family: Algerian;
     text-allign: left;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
-.body {
+/*.body {
     margin: 0 auto;
     width: 85%;
     height: 100%;
     clear: both
+}*/
+
+#container {
+    position:relative;
+    top: 0;
+    width:auto;
+    min-height:auto;
+    margin:0;
+    padding:0;
+}
+#header {
+    height: 50px;
+    width:100%;
+    background:floralwhite;
+
+}
+#body {
+    height: auto;
+    alignment: left;
+    padding: 5% 5% 0 5%;
+    background: grey;
 }
 
 a {
@@ -16,46 +41,43 @@ a {
 }
 
 a:link, a:visited {
-
 }
 
 a:hover {
-
 }
 
-.mainheader nav {
-    background-color: white;
-    height: 50px;
+#header .navigation nav {
+    background-color: lightgray;
 
     border-radius: 5px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
 }
 
-.mainheader nav ul {
+#header .navigation nav ul {
     list-style: none;
     margin: 0 auto;
 }
 
-.mainheader nav ul li {
+#header .navigation nav ul li {
     float: left;
     display: inline;
 }
 
-.mainheader nav a:link, .mainheader nav a:visited, .mainheader nav .firma {
+#header .navigation nav a:link, #header .navigation nav a:visited {
     color: lightgray;
     display: inline-block;
     padding: 12px 30px;
     height: 26px;
 }
 
-.mainheader nav .firma{
+#header .navigation nav .firma{
     padding: 0px 30px;
     color: black;
 }
 
-.mainheader nav a:hover, .mainheader nav a:active,
-.mainheader nav .active a:link, .mainheader nav .active a:visited {
+#header .navigation nav a:hover, #header .navigation nav a:active,
+#header .navigation nav .active a:link, #header .navigation nav .active a:visited {
     text-shadow: none;
     background-color: deepskyblue;
     color: orange;
@@ -76,9 +98,13 @@ a:hover {
 
 .hotProductPictures {
     font-family: "Times New Roman";
+    padding: 3% 0 0 0;
 }
 
 .whatsHot {
+    /*background-color: indianred;*/
+    padding: 5% 0;
     margin: 0 auto;
+    text-align: center;
+    font-size: 200%;
 }
-
