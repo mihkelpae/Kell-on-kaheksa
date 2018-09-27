@@ -1,10 +1,9 @@
-body { padding-top: 70px; }
 
-.col {
-    padding-top: 3%;
-}
-.col-md-auto {
-    padding-top: 3%;
+body {
+    padding-top: 70px;
+    display: block;
+    width: 90%;
+    padding-left: 10%;
 }
 
 #homeLogoAndMotto {
@@ -19,13 +18,8 @@ body { padding-top: 70px; }
     padding: 5px 5px;
 }
 
-.logo {
-    padding: 2% 10%;
-    display: flex;
-    align-items: center;
+#whatsHot {
+    text-align: center;
 }
 
-.body {
-    padding: 2% 10%;
-    display: flex;
-}
+
