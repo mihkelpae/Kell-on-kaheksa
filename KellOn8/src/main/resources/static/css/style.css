@@ -1,111 +1,25 @@
-/*Kastus CSS fail praegu*/
+
 body {
-    background-color: #ffffff;
-    font-size: 115%;
-    font-family: Algerian;
-    text-allign: left;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
-/*.body {
-    margin: 0 auto;
-    width: 85%;
-    height: 100%;
-    clear: both
-}*/
-
-#container {
-    position:relative;
-    top: 0;
-    width:auto;
-    min-height:auto;
-    margin:0;
-    padding:0;
-}
-#header {
-    height: 50px;
-    width:100%;
-    background:floralwhite;
-
-}
-#body {
-    height: auto;
-    alignment: left;
-    padding: 5% 5% 0 5%;
-    background: grey;
+    padding-top: 70px;
+    display: block;
+    width: 90%;
+    padding-left: 10%;
 }
 
-a {
-    text-decoration: none;
+#homeLogoAndMotto {
+    padding-right: 10%;
 }
 
-a:link, a:visited {
+#loginRegister {
+    padding-left: 10px;
 }
 
-a:hover {
+#loginfields {
+    padding: 5px 5px;
 }
 
-#header .navigation nav {
-    background-color: lightgray;
-
-    border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-}
-
-#header .navigation nav ul {
-    list-style: none;
-    margin: 0 auto;
-}
-
-#header .navigation nav ul li {
-    float: left;
-    display: inline;
-}
-
-#header .navigation nav a:link, #header .navigation nav a:visited {
-    color: lightgray;
-    display: inline-block;
-    padding: 12px 30px;
-    height: 26px;
-}
-
-#header .navigation nav .firma{
-    padding: 0px 30px;
-    color: black;
-}
-
-#header .navigation nav a:hover, #header .navigation nav a:active,
-#header .navigation nav .active a:link, #header .navigation nav .active a:visited {
-    text-shadow: none;
-    background-color: deepskyblue;
-    color: orange;
-}
-
-.logoJaPilt, .firmaNimi {
-    padding: 5%;
-    display: flex;
-    align-items: center;
-    font-size: 175%;
-    margin: 0 auto;
-}
-
-.piltideTulp {
-    float: left;
-    width: 33%;
-}
-
-.hotProductPictures {
-    font-family: "Times New Roman";
-    padding: 3% 0 0 0;
-}
-
-.whatsHot {
-    /*background-color: indianred;*/
-    padding: 5% 0;
-    margin: 0 auto;
+#whatsHot {
     text-align: center;
-    font-size: 200%;
 }
+
+

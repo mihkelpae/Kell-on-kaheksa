@@ -1,62 +1,89 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:include="fragments/head :: head"/>
+<title>Kell on kaheksa</title>
 
-<!-- Kasutu html fail praegu -->
+<body>
 
-<body class="body">
+<div class="naviagtion">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Kell on kaheksa</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <div id="container">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="book">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Help</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <b>Log in or register</b>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <div id="loginRegister">
+                            <div id="loginfields">
+                                <input type="text" class="form-control" id="username" placeholder="Username">
+                                <input type="password" class="form-control" id="password" placeholder="Password">
+                            </div>
 
-        <div id="header">
-            <header class="navigation">
-                <nav><ul>
-                    <li><div class="firma">
-                        <p>Kell on 8</p>
+                            <a class="btn btn-danger" href="#">Log in</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="btn btn-danger" href="#">Register</a>
+                        </div>
                     </div>
-                    </li>
-                    <li class="active"><a href="#">Kodu</a></li>
-                    <li><a href="#">Tooted</a></li>
-                    <li><a href="#">Meist</a></li>
-                    <li><a href="#">Abi</a></li>
-                </ul></nav>
-            </header>
+                </li>
+            </ul>
         </div>
+    </nav>
+</div>
 
-        <div id="body">
-            <main class="maincontent">
-                <div class="homecontent">
-                    <div class="logoJaPilt">
-                        <img src=http://www.clker.com/cliparts/n/v/t/V/0/e/8-o-clock-md.png>
-                        <div class="firmaNimi">
-                            <bold>Kell on kaheksa</bold>
-                        </div>
+<div class="body">
+    <div class="row">
+        <div class="col-12">
+            <div class="logo">
+                <img src=https://i.imgur.com/kAOp1OF.png width="100%">
+            </div>
+        </div>
+        <div class="w-100"></div>
+        <div class="col-12" id="whatsHot">
+            <h1>What's hot</h1>
+        </div>
+        <div class="w-100"></div>
+        <div class="col-12">
+            <div class="hotProducts">
+                <div class="row align-items-center">
+                    <div class="col">
+                        <img class="toaster1" src=https://static1.nordic.pictures/3209457-thickbox_default/tss801ss-taoster.jpg width="65%" height="65%">
+                        <div>One of three columns</div>
                     </div>
-
-                    <div class="hotProducts">
-                        <div class="whatsHot">
-                            <bold>Hetkel kuumad tooted</bold>
-                        </div>
-                        <div class="hotProductPictures">
-                            <div class="piltideTulp">
-                                <img class="toaster1" src=https://static1.nordic.pictures/3209457-thickbox_default/tss801ss-taoster.jpg width="200" height="200">
-                                <p>See on röster 1</p>
-                            </div>
-                            <div class="piltideTulp">
-                                <img class="toaster2" src=https://static1.nordic.pictures/3209457-thickbox_default/tss801ss-taoster.jpg width="200" height="200">
-                                <p>See on röster 2</p>
-                            </div>
-                            <div class="piltideTulp">
-                                <img class="toaster3" src=https://static1.nordic.pictures/3209457-thickbox_default/tss801ss-taoster.jpg width="200" height="200">
-                                <p>See on röster 3</p>
-                            </div>
-                        </div>
+                    <div class="col">
+                        <img class="toaster1" src=https://static1.nordic.pictures/3209457-thickbox_default/tss801ss-taoster.jpg width="65%" height="65%">
+                        <div>One of three columns</div>
+                    </div>
+                    <div class="col">
+                        <img class="toaster1" src=https://static1.nordic.pictures/3209457-thickbox_default/tss801ss-taoster.jpg width="65%" height="65%">
+                        <div>One of three columns</div>
                     </div>
                 </div>
-            </main>
+            </div>
         </div>
-
+        <div class="w-100"></div>
+        <div class="loadMoreHot">
+            <button class="btn-info">Load more</button>
+        </div>
     </div>
-</body>
+</div>
 
+</body>
 </html>
