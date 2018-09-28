@@ -21,7 +21,7 @@
                     <a class="nav-link" href="book">Products</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About us</a>
+                    <a class="nav-link" href="about">About us</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Help</a>
@@ -51,15 +51,19 @@
     <div class="body">
         <div class="row">
             <div class="col-8"><h2>Hetkel valitud kategooria</h2></div>
-            <div class="col-4" id="shoppingCart">
+            <div class="col-4 float-right" id="shoppingCart">
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Shopping cart
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                         <div class="row">
-                            <button class="dropdown-item" type="button">Toaster 1</button>
-                            <button class="btn-danger" type="button">X</button>
+                            <div class="col-9">
+                                <button class="dropdown-item" type="button">Toaster 1</button>
+                            </div>
+                            <div class="col-1">
+                                <button class="btn-danger" type="button">X</button>
+                            </div>
                         </div>
                         <button class="dropdown-item" type="button">Toaster 2</button>
                         <button class="dropdown-item" type="button">Toaster 3</button>
@@ -71,32 +75,38 @@
         <br>
         <br>
         <div class="w-100"></div>
-        <div class="row" id="esimeneRidaTooteid">
-            <div class="col-2">
-                <button class="btn-danger active">Kategooria1</button>
-                <div></div>
-                <button class="btn-danger">Kategooria2</button>
-                <div></div>
-                <button class="btn-danger">Kategooria3</button>
+        <div class="col" id="productCategories">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Categories
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                    <button class="dropdown-item" type="button">Cat1</button>
+                    <button class="dropdown-item" type="button">Cat2</button>
+                    <button class="dropdown-item" type="button">Cat3</button>
+                </div>
             </div>
-            <div class="col-3">
+        </div>
+        <div class="w-100"></div>
+        <div class="row" id="esimeneRidaTooteid">
+            <div class="col-3 offset-1" id="esimeneRidaEsimene">
                 <img class="toaster1" src=https://static1.nordic.pictures/3209457-thickbox_default/tss801ss-taoster.jpg width="80%">
             </div>
-            <div class="col-3">
+            <div class="col-3" id="esimeneRidaTeine">
                 <img class="toaster2" src=https://static1.nordic.pictures/3209457-thickbox_default/tss801ss-taoster.jpg width="80%">
             </div>
-            <div class="col-3">
+            <div class="col-3" id="esimeneRidaKolmas">
                 <img class="toaster3" src=https://static1.nordic.pictures/3209457-thickbox_default/tss801ss-taoster.jpg width="80%">
             </div>
         </div>
         <div class="row" id="teineRidaTooteid">
-            <div class="col-3 offset-2">
+            <div class="col-3 offset-1" id="teineRidaEsimene">
                 <img class="toaster1" src=https://static1.nordic.pictures/3209457-thickbox_default/tss801ss-taoster.jpg width="80%">
             </div>
-            <div class="col-3">
+            <div class="col-3" id="teineRidaTeine">
                 <img class="toaster1" src=https://static1.nordic.pictures/3209457-thickbox_default/tss801ss-taoster.jpg width="80%">
             </div>
-            <div class="col-3">
+            <div class="col-3" id="teineRidaKolmas">
                 <img class="toaster1" src=https://static1.nordic.pictures/3209457-thickbox_default/tss801ss-taoster.jpg width="80%">
             </div>
         </div>

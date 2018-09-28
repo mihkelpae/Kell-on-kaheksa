@@ -14,13 +14,13 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="book">Products</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="about">About us</a>
                 </li>
                 <li class="nav-item">
@@ -48,42 +48,39 @@
     </nav>
 </div>
 <div class="container-fluid">
-    <div class="body">
-        <div class="row">
-            <div class="col-12">
-                <div class="logo">
-                    <img src=https://i.imgur.com/kAOp1OF.png width="100%">
-                </div>
-            </div>
-            <div class="w-100"></div>
-            <div class="col-12" id="whatsHot">
-                <h1>What's hot</h1>
-            </div>
-            <div class="w-100"></div>
-            <div class="col-12">
-                <div class="hotProducts">
-                    <div class="row align-items-center">
-                        <div class="col">
-                            <img class="toaster1" src=https://static1.nordic.pictures/3209457-thickbox_default/tss801ss-taoster.jpg width="65%" height="65%">
-                            <div>One of three columns</div>
-                        </div>
-                        <div class="col">
-                            <img class="toaster1" src=https://static1.nordic.pictures/3209457-thickbox_default/tss801ss-taoster.jpg width="65%" height="65%">
-                            <div>One of three columns</div>
-                        </div>
-                        <div class="col">
-                            <img class="toaster1" src=https://static1.nordic.pictures/3209457-thickbox_default/tss801ss-taoster.jpg width="65%" height="65%">
-                            <div>One of three columns</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="w-100"></div>
-            <div class="loadMoreHot">
-                <button class="btn-info">Load more</button>
-            </div>
+    <!-- Mapist kõrgemal olev osa-->
+    <div class="row">
+        <div class="col-4 offset-4 justify-content-center">
+            <h2>Who are we?!?!</h2>
         </div>
     </div>
+    <br>
+    <div class="row">
+        <div class="col-4 offset-3 justify-content-center">
+            <p>Lorem ipsum dolor sit amet, ut malis harum decore mei. Et case gloriatur eos, mel te omnium imperdiet. Nobis timeam pro te, per adhuc appellantur in. Ad doctus adipiscing nec.</p>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col">
+            <div id="map" style="width:90%; height: 500px;"></div>
+        </div>
+    </div>
+
 </div>
+
+<script>
+    function initMap() {
+        var liivi = {lat: 58.3782485, lng: 26.7124846};
+
+        var map = new google.maps.Map(
+            document.getElementById('map'), {zoom: 15, center: liivi});
+        var marker = new google.maps.Marker({position: liivi, map: map});
+    }
+</script>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu0AZiGJ4n9vodTroUU9IE6GUGsAeXNEg&callback=initMap"></script>
+
+
 </body>
 </html>

@@ -18,6 +18,12 @@ public class IndexController {
     public String home() {
         return "book";
     }
+
+    @GetMapping("/about")
+    public String about() {
+        return "about";
+    }
+
     @RequestMapping("/book/{id}")
     public String getBookById(Model model, @PathVariable("id") Long id) {
         model.addAttribute("bookId", id);
