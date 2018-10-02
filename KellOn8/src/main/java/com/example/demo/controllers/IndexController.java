@@ -14,12 +14,12 @@ public class IndexController {
         model.addAttribute("text", "Hello world from index ...");
         return "index";
     }
-    @GetMapping("/book")
+    @GetMapping("/products/kategooria1")
     public String home() {
-        return "book";
+        return "/products/kategooria1";
     }
 
-    @GetMapping("/about")
+    @GetMapping("about")
     public String about() {
         return "about";
     }
@@ -27,7 +27,7 @@ public class IndexController {
     @RequestMapping("/book/{id}")
     public String getBookById(Model model, @PathVariable("id") Long id) {
         model.addAttribute("bookId", id);
-        return "book";
+        return "products";
     }
 
 }
