@@ -18,13 +18,13 @@
                     <a class="nav-link" href="/">Home<span class="sr-only"></span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="products/kategooria1">Products</a>
+                    <a class="nav-link" href="kategooria1">Products</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/../about">About us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Help</a>
+                    <a class="nav-link" href="/../help">Help</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -32,13 +32,17 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <div id="loginRegister">
-                            <div id="loginfields">
-                                <input type="text" class="form-control" id="username" placeholder="Username">
-                                <input type="password" class="form-control" id="password" placeholder="Password">
+                            <div class="col-4">
+                                <a class="btn btn-block btn-social btn-facebook" href="#">
+                                    <span class="fa fa-facebook"></span> Log in with Facebook
+                                </a>
                             </div>
-                            <a class="btn btn-danger" href="#">Log in</a>
                             <div class="dropdown-divider"></div>
-                            <a class="btn btn-danger" href="#">Register</a>
+                            <div class="col-4">
+                                <a class="btn btn-block btn-social btn-google" href="#">
+                                    <span class="fa fa-google"></span> Log in with Google
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </li>
@@ -50,7 +54,7 @@
 <div class="container-fluid">
     <div class="body">
         <div class="row">
-            <div class="col-8"><h2>Hetkel valitud kategooria</h2></div>
+            <div class="col-8"  id="valitudKat"><h2>Kategooria</h2></div>
             <div class="col-4 float-right" id="shoppingCart">
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -81,9 +85,9 @@
                     Categories
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                    <button class="dropdown-item" type="button">Cat1</button>
-                    <button class="dropdown-item" type="button">Cat2</button>
-                    <button class="dropdown-item" type="button">Cat3</button>
+                    <button class="dropdown-item active" id="kat1Nupp" type="button">Cat1</button>
+                    <button class="dropdown-item" id="kat2Nupp" type="button">Cat2</button>
+                    <button class="dropdown-item" id="kat3Nupp" type="button">Cat3</button>
                 </div>
             </div>
         </div>

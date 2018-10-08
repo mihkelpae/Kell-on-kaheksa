@@ -16,12 +16,22 @@ public class IndexController {
     }
     @GetMapping("/products/kategooria1")
     public String home() {
-        return "/products/kategooria1";
+        return "products/kategooria1";
     }
 
     @GetMapping("about")
     public String about() {
         return "about";
+    }
+
+    @GetMapping("help")
+    public String help() {
+        return "help";
+    }
+
+    @GetMapping("profile")
+    public String profile() {
+        return "profile";
     }
 
     @RequestMapping("/book/{id}")
