@@ -1,55 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:include="fragments/head :: head"/>
+<script src="/static/javascript/loadMore.js"></script>
+
 <title>Kell on kaheksa</title>
 
 <body>
 
-<div class="naviagtion">
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand">Kell on kaheksa</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="products/kategooria1">Products</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="about">About us</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="help">Help</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <b>Log in or register</b>
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <div id="loginRegister">
-                            <div class="col-4">
-                                <a class="btn btn-block btn-social btn-facebook" href="#">
-                                    <span class="fa fa-facebook"></span> Log in with Facebook
-                                </a>
-                            </div>
-                            <div class="dropdown-divider"></div>
-                            <div class="col-4">
-                                <a class="btn btn-block btn-social btn-google" href="#">
-                                    <span class="fa fa-google"></span> Log in with Google
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </nav>
-</div>
+<div th:replace="fragments/header :: header"></div>
 <div class="container-fluid">
     <div class="body">
         <div class="row">
@@ -83,12 +41,17 @@
             </div>
             <div class="w-100"></div>
             <br>
-            <div class="col-1 offset-5">
-                <button class="btn-info">Load more</button>
+
+            <div class="col-2 offset-4" id="loadMore">
+                <button onclick="loadMail()" class="btn-info">Load more</button>
+            </div>
+            <div class="col-12" id="loadMail">
+                <label for="aadress">Teie e-maili aadress:</label>
+                <input type="text" id="aadress">
+                <button type="button" class="btn">Saada info meilile</button>
             </div>
         </div>
     </div>
 </div>
-<div></div>
 </body>
 </html>

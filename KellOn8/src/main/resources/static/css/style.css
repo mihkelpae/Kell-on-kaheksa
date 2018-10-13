@@ -3,6 +3,7 @@ body {
     display: block;
     padding-left: 10%;
     background-colour: red;
+    padding-bottom: 5%;
 }
 
 #homeLogoAndMotto {
@@ -21,3 +22,8 @@ body {
     text-align: center;
 }
 
+
+#loadMail {
+    display: none;
+    padding-top: 10px;
+}
