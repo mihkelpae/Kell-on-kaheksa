@@ -27,8 +27,20 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <div id="loginRegister">
-                            <div class="col">
-                                <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
+                            <div class="unauthorized">
+                                <div class="col">
+                                    <a class="btn btn-block btn-social btn-facebook">
+                                        <span class="fa fa-facebook"></span> Sign in with Facebook
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="authorized" style="display: none">
+                                Logged in as: <span id="user"></span>
+                                <div>
+                                    <a class="btn btn-block btn-social btn-facebook">
+                                        <span class="fa fa-facebook"></span> Log out
+                                    </a>
+                                </div>
                             </div>
                             <div class="dropdown-divider"></div>
                             <div class="col">
