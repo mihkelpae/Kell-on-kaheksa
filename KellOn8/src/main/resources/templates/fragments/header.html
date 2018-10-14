@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+<head th:include="head :: head"/>
+
 <header class="naviagtion">
     <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand">Kell on kaheksa</a>
@@ -21,27 +23,29 @@
                 <li class="nav-item">
                     <a class="nav-link" href="help">Help</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="addProducts">Add Products</a>
+                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <b>Log in or register</b>
+                        <b>Log in</b>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
                         <div id="loginRegister">
-                            <div class="unauthorized">
-                                <div class="col">
+                            <div class="col">
+                                <div class="unauthorized">
                                     <a class="btn btn-block btn-social btn-facebook">
                                         <span class="fa fa-facebook"></span> Sign in with Facebook
                                     </a>
                                 </div>
-                            </div>
-                            <div class="authorized" style="display: none">
-                                Logged in as: <span id="user"></span>
                                 <div>
                                     <a class="btn btn-block btn-social btn-facebook">
                                         <span class="fa fa-facebook"></span> Log out
                                     </a>
                                 </div>
                             </div>
+
                             <div class="dropdown-divider"></div>
                             <div class="col">
                                 <a class="btn btn-block btn-social btn-google" href="#">
