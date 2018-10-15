@@ -1,47 +1,51 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+<head th:include="head :: head"/>
+
 <header class="naviagtion">
     <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand">Kell on kaheksa</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" >
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/" data-toggle="tooltip" title="Siit navigeerid kodulehele">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="products">Products</a>
+                    <a class="nav-link" href="products" data-toggle="tooltip" title="Siit navigeerid toodete lehele">Products</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="about">About us</a>
+                    <a class="nav-link" href="about" data-toggle="tooltip" title="Siit navigeerid meie info lehele">About us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="help">Help</a>
+                    <a class="nav-link" href="help" data-toggle="tooltip" title="Siit navigeerid hetkel tühjale lehele">Help</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="addProducts" data-toggle="tooltip" title="Siin saab tulevikus toodeid lisada">Add Products</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <b>Log in or register</b>
+                        <b>Log in</b>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
                         <div id="loginRegister">
-                            <div class="unauthorized">
-                                <div class="col">
+                            <div class="col">
+                                <div class="unauthorized">
                                     <a class="btn btn-block btn-social btn-facebook">
                                         <span class="fa fa-facebook"></span> Sign in with Facebook
                                     </a>
                                 </div>
-                            </div>
-                            <div class="authorized" style="display: none">
-                                Logged in as: <span id="user"></span>
                                 <div>
                                     <a class="btn btn-block btn-social btn-facebook">
                                         <span class="fa fa-facebook"></span> Log out
                                     </a>
                                 </div>
                             </div>
+
                             <div class="dropdown-divider"></div>
                             <div class="col">
                                 <a class="btn btn-block btn-social btn-google" href="#">

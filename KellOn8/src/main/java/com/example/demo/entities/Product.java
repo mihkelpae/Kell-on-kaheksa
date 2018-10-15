@@ -1,5 +1,8 @@
 package com.example.demo.entities;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import java.sql.Date;
 
 @Table(name = "products")
 @Entity
@@ -10,9 +13,11 @@ public class Product {
     @Column(name = "id")
     private Long id;
 
+    @NotNull
     @Column(name = "productName")
     private String productName;
 
+    @NotNull
     @Column(name = "category")
     private String category;
 
@@ -22,11 +27,16 @@ public class Product {
     @Column(name = "productDescription")
     private String productDescription;
 
+    @NotNull
     @Column(name = "price")
     private float price;
 
-    @Column(name = "filePath")
-    private String filePath;
+    @Column(name = "addedDate", nullable = false, updatable = false)
+    private Date addedDate;
+
+    public Date getAddedDate() {
+        return addedDate;
+    }
 
     public Long getId() {
         return id;
@@ -72,11 +82,16 @@ public class Product {
         this.price = price;
     }
 
-    public String getFilePath() {
-        return filePath;
-    }
-
-    public void setFilePath(String filePath) {
-        this.filePath = filePath;
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", productName='" + productName + '\'' +
+                ", category='" + category + '\'' +
+                ", productShortDescription='" + productShortDescription + '\'' +
+                ", productDescription='" + productDescription + '\'' +
+                ", price=" + price +
+                ", addedDate=" + addedDate +
+                '}';
     }
 }
