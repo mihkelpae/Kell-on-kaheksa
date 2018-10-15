@@ -29,7 +29,7 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	compile('org.springframework.boot:spring-boot-starter-mail')
-	compile("mysql:mysql-connector-java:5.1.46")
+	compile("mysql:mysql-connector-java")
 	compile("org.springframework.boot:spring-boot-starter-data-jpa")
 	compile 'org.springframework.boot:spring-boot-starter-security'
 	compile 'org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure:2.0.5.RELEASE'
