@@ -18,6 +18,7 @@
 .idea/**/shelf
 .idea/**/misc
 
+.idea/inspectionProfiles/Project_default.xml
 # Generated files
 .idea/**/contentModel.xml
 
