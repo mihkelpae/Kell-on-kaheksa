@@ -9,7 +9,7 @@
 .gradlew
 .gradlew.bat
 .settings.gradle
-
+.gradle
 # User-specific stuff
 .idea/**/workspace.xml
 .idea/**/tasks.xml
