@@ -2,7 +2,6 @@ package com.example.demo.entities;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.sql.Date;
 
 @Table(name = "products")
 @Entity
@@ -30,13 +29,6 @@ public class Product {
     @NotNull
     @Column(name = "price")
     private float price;
-
-    @Column(name = "addedDate", nullable = false, updatable = false)
-    private Date addedDate;
-
-    public Date getAddedDate() {
-        return addedDate;
-    }
 
     public Long getId() {
         return id;
@@ -82,6 +74,18 @@ public class Product {
         this.price = price;
     }
 
+    public Product() {
+
+    }
+
+    public Product(@NotNull String productName, @NotNull String category, @NotNull float price, String productDescription, String productShortDescription) {
+        this.productName = productName;
+        this.category = category;
+        this.price = price;
+        this.productDescription = productDescription;
+        this.productShortDescription = productShortDescription;
+    }
+
     @Override
     public String toString() {
         return "Product{" +
@@ -91,7 +95,6 @@ public class Product {
                 ", productShortDescription='" + productShortDescription + '\'' +
                 ", productDescription='" + productDescription + '\'' +
                 ", price=" + price +
-                ", addedDate=" + addedDate +
                 '}';
     }
 }

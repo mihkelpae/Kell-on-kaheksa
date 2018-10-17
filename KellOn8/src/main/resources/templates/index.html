@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<head lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <th:block th:include="fragments/head :: head"/>
     <th:block th:include="fragments/header :: header"/>
@@ -51,7 +51,18 @@
                 <label for="aadress" data-toggle="tooltip" title="See funktsioon ei tööta">Teie e-maili aadress:</label>
                 <input type="text" id="aadress">
                 <button type="button" id ="meil" class="btn">Saada info meilile</button>
-
+                <!--<form action="#" th:action=""-->
+                <!--<form action="#" th:action="@{/}" th:object="${mail}" method="post">
+                    <table border="1">
+                        <tr>
+                            <td><label text="E-mail address"/></td>
+                            <td><input type="email" th:field="*{email}"/></td>
+                        </tr>
+                        <tr>
+                            <td><input class="btn-danger" type="submit" value="Submit"></td>
+                        </tr>
+                    </table>
+                </form>-->
             </div>
         </div>
     </div>
