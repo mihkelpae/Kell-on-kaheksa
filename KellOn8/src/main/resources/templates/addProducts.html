@@ -11,7 +11,12 @@
 
 <div class="container-fluid">
 
+    <div th:if="${productAdded}" class="alert alert-success" role="alert">
+        <p th:text="${productAdded}">success message</p>
+    </div>
+
     <form action="#" th:action="@{/saveProduct}" th:object="${product}" method="post">
+        <input type="hidden" th:field="*{id}" />
         <p>Name: <input type="text" th:field="*{productName}" /></p>
         <p>Category:
             <select th:field="*{category}">

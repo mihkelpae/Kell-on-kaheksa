@@ -1,0 +1,16 @@
+CACHE:
+/static/css/bootstrap.css
+/static/css/bootstrap-social.css
+/static/css/font-awesome.css
+/static/css/style.css
+/static/javascript/bootstrap.min.js
+/static/javascript/loadMore.js
+/static/javascript/popper.min.js
+/templates/about.html
+/templates/index.html
+/templates/help.html
+/templates/fragments/head.html
+/templates/fragments/header.html
+
+FALLBACK:
+/templates/index.html

@@ -8,6 +8,11 @@
 </head>
 <body>
 <div class="container-fluid">
+
+    <div th:if="${message}" class="alert alert-success" role="alert">
+        <p th:text="${message}">success message</p>
+    </div>
+
     <h1>ALL PRODUCTS</h1>
     <div th:if="${not #lists.isEmpty(product)}">
         <h2>Products</h2>
@@ -20,6 +25,8 @@
                 <th>Quantity</th>
                 <th>Description</th>
                 <th>Short description</th>
+                <th>Edit</th>
+                <th>Delete</th>
             </tr>
             <tr th:each="product : ${product}">
                 <td th:text="${product.id}"></td>
@@ -29,6 +36,8 @@
                 <td th:text="${product.quantity}"></td>
                 <td th:text="${product.productDescription}"></td>
                 <td th:text="${product.productShortDescription}"></td>
+                <td><a href="#" th:href="@{/allProducts/edit/} + ${product.id}">Edit</a></td>
+                <td><a href="#" th:href="@{/allProducts/delete/} + ${product.id}">Delete</a></td>
             </tr>
         </table>
 
