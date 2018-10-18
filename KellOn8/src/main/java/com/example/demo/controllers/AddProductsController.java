@@ -25,7 +25,7 @@ public class AddProductsController {
         return "addProducts";
     }
 
-    @RequestMapping(value="/addProducts", method = RequestMethod.POST)
+    @RequestMapping(value="/saveProduct", method = RequestMethod.POST)
     public String saveProduct(@ModelAttribute Product product, Model model) {
         model.addAttribute("product", product);
         productRepository.save(product);

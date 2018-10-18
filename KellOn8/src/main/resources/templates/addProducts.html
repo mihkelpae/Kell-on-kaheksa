@@ -11,9 +11,18 @@
 
 <div class="container-fluid">
 
-    <form action="#" th:action="@{addProducts.html}" th:object="${product}" method="post">
+    <form action="#" th:action="@{/saveProduct}" th:object="${product}" method="post">
         <p>Name: <input type="text" th:field="*{productName}" /></p>
-        <p>Category: <input type="text" th:field="*{category}" /></p>
+        <p>Category:
+            <select th:field="*{category}">
+                <option th:value="'Käekell'" th:text="Käekell"></option>
+                <option th:value="'Taskukell'" th:text="Taskukell"></option>
+                <option th:value="'Seinakell'" th:text="Seinakell"></option>
+                <option th:value="'Äratuskell'" th:text="Äratuskell"></option>
+                <option th:value="'Spordikell'" th:text="Spordikell"></option>
+                <option th:value="'Stopper'" th:text="Stopper"></option>
+            </select>
+        </p>
         <p>Price: <input type="number" th:field="*{price}" /></p>
         <p>Description: <input type="text" th:field="*{productDescription}" /></p>
         <p>Short description: <input type="text" th:field="*{productShortDescription}" /></p>
