@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class ProductsController {
 
-    @RequestMapping(value = "/products.html", method = RequestMethod.GET)
+    @RequestMapping(value = "/products", method = RequestMethod.GET)
     public String index(Model model) {
         model.addAttribute("text", "Hello world from index ...");
         return "products";
