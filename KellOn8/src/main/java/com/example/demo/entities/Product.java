@@ -20,6 +20,10 @@ public class Product {
     @Column(name = "category")
     private String category;
 
+    @NotNull
+    @Column(name = "quantity")
+    private int quantity;
+
     @Column(name = "productShortDescription")
     private String productShortDescription;
 
@@ -72,6 +76,14 @@ public class Product {
 
     public void setPrice(float price) {
         this.price = price;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     public Product() {

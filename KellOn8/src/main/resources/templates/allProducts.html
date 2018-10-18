@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <th:block th:include="fragments/head :: head"/>
+    <th:block th:include="fragments/header :: header"/>
+    <title>All products</title>
+    <div th:replace="fragments/header :: header"></div>
+</head>
+<body>
+<div class="container-fluid">
+    <h1>ALL PRODUCTS</h1>
+    <div th:if="${not #lists.isEmpty(product)}">
+        <h2>Products</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Description</th>
+                <th>Short description</th>
+            </tr>
+            <tr th:each="product : ${product}">
+                <td th:text="${product.id}"></td>
+                <td th:text="${product.productName}"></td>
+                <td th:text="${product.category}"></td>
+                <td th:text="${product.price}"></td>
+                <td th:text="${product.quantity}"></td>
+                <td th:text="${product.productDescription}"></td>
+                <td th:text="${product.productShortDescription}"></td>
+            </tr>
+        </table>
+
+    </div>
+</div>
+
+
+</body>
+</html>
