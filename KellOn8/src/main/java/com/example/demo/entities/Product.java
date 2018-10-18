@@ -34,6 +34,9 @@ public class Product {
     @Column(name = "price")
     private float price;
 
+    /*@Column(name = "picture")
+    private byte[] picture;*/
+
     public Long getId() {
         return id;
     }
@@ -41,6 +44,14 @@ public class Product {
     public String getProductName() {
         return productName;
     }
+
+   /* public byte[] getPicture() {
+        return picture;
+    }
+
+    public void setPicture(byte[] picture) {
+        this.picture = picture;
+    }*/
 
     public void setProductName(String productName) {
         this.productName = productName;

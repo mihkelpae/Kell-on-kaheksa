@@ -17,7 +17,7 @@
 
     <form action="#" th:action="@{/saveProduct}" th:object="${product}" method="post">
         <input type="hidden" th:field="*{id}" />
-        <p>Name: <input type="text" th:field="*{productName}" /></p>
+        <p>Name: <input type="text" th:field="*{productName}" th:required="required" /></p>
         <p>Category:
             <select th:field="*{category}">
                 <option th:value="'Käekell'" th:text="Käekell"></option>
@@ -28,10 +28,10 @@
                 <option th:value="'Stopper'" th:text="Stopper"></option>
             </select>
         </p>
-        <p>Price: <input type="number" th:field="*{price}" /></p>
-        <p>Quantity: <input type="number" th:field="*{quantity}" /></p>
-        <p>Description: <input type="text" th:field="*{productDescription}" /></p>
-        <p>Short description: <input type="text" th:field="*{productShortDescription}" /></p>
+        <p>Price: <input type="number" th:field="*{price}" th:required="required"/></p>
+        <p>Quantity: <input type="number" th:field="*{quantity}" th:required="required"/></p>
+        <p>Description: <input type="text" th:field="*{productDescription}" th:required="required"/></p>
+        <p>Short description: <input type="text" th:field="*{productShortDescription}" th:required="required"/></p>
         <p><input type="submit" value="Submit" /><input type="reset" value="Reset" /></p>
     </form>
 
