@@ -11,26 +11,25 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="/" data-toggle="tooltip" title="Siit navigeerid kodulehele">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/" data-toggle="tooltip" title="Siit navigeerid kodulehele" th:text="#{home}"><span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="products" data-toggle="tooltip" title="Siit navigeerid toodete lehele">Products</a>
+                    <a class="nav-link" href="products" data-toggle="tooltip" title="Siit navigeerid toodete lehele" th:text="#{products}"></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="about" data-toggle="tooltip" title="Siit navigeerid meie info lehele">About us</a>
+                    <a class="nav-link" href="about" data-toggle="tooltip" title="Siit navigeerid meie info lehele" th:text="#{about_us}"></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="help" data-toggle="tooltip" title="Siit navigeerid hetkel tühjale lehele">Help</a>
+                    <a class="nav-link" href="help" data-toggle="tooltip" title="Siit navigeerid hetkel tühjale lehele" th:text="#{help}"></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="addProducts" data-toggle="tooltip" title="Siin saab tulevikus toodeid lisada">Add Products</a>
+                    <a class="nav-link" href="addProducts" data-toggle="tooltip" title="Siin saab tulevikus toodeid lisada" th:text="#{add_products}"></a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <b>Log in</b>
+                        <b th:text="#{log_in}"></b>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-
                         <div id="loginRegister">
                             <div class="col">
                                 <div class="unauthorized">
@@ -44,13 +43,26 @@
                                     </a>
                                 </div>
                             </div>
-
                             <div class="dropdown-divider"></div>
                             <div class="col">
                                 <a class="btn btn-block btn-social btn-google" href="#">
                                     <span class="fa fa-google"></span> Log in with Google
                                 </a>
                             </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <b th:text="#{language}"></b>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="languageDropdown">
+                        <div class="col">
+                            <a href="?lang=en" rel="alternate" hreflang="en" th:text="#{en_lang}"></a>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <div class="col">
+                            <a href="?lang=et" rel="alternate" hreflang="et" th:text="#{et_lang}"></a>
                         </div>
                     </div>
                 </li>

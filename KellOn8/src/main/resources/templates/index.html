@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<html th:lang="#{language_code}" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <th:block th:include="fragments/head :: head"/>
     <th:block th:include="fragments/header :: header"/>
@@ -21,7 +21,7 @@
             </div>
             <div class="w-100"></div>
             <div class="col-12" id="whatsHot">
-                <h1 data-toggle="tooltip" title="See tekst on rakendusesisene abiinfo">What's hot</h1>
+                <h1 data-toggle="tooltip" title="See tekst on rakendusesisene abiinfo" th:text="#{hotProducts}"></h1>
             </div>
             <div class="w-100"></div>
             <div class="col-12">
@@ -29,15 +29,15 @@
                     <div class="row align-items-center">
                         <div class="col">
                             <img class="toaster1" src=https://static1.nordic.pictures/3209457-thickbox_default/tss801ss-taoster.jpg width="65%" height="65%">
-                            <div>One of three columns</div>
+                            <div th:text="#{sampleText}"></div>
                         </div>
                         <div class="col">
                             <img class="toaster1" src=https://static1.nordic.pictures/3209457-thickbox_default/tss801ss-taoster.jpg width="65%" height="65%">
-                            <div>One of three columns</div>
+                            <div th:text="#{sampleText}"></div>
                         </div>
                         <div class="col">
                             <img class="toaster1" src=https://static1.nordic.pictures/3209457-thickbox_default/tss801ss-taoster.jpg width="65%" height="65%">
-                            <div>One of three columns</div>
+                            <div th:text="#{sampleText}"></div>
                         </div>
                     </div>
                 </div>
@@ -47,13 +47,13 @@
 
             <!--Sending automatic e-mails-->
             <div class="col-2 offset-4" id="loadMore" >
-                <button onclick="loadMail()" class="btn-info" data-toggle="tooltip" title="Siia vajutades laetakse rohkem sisu">Load more</button>
+                <button onclick="loadMail()" class="btn-info" data-toggle="tooltip" title="Siia vajutades laetakse rohkem sisu" th:text="#{loadMore}"></button>
             </div>
             <div class="col-12" id="loadMail">
                 <form action="#" th:action="@{/mailSent}" method="post">
-                    <p>If you wish to receive an automatic email, enter your email address below and click on "Submit"</p>
+                    <p th:text="#{newsletter}"></p>
                     <p>Email: <input type="email" name="address" th:required="required"/></p>
-                    <p><input class="btn-dark" type="submit" value="Submit"/></p>
+                    <p><input class="btn-dark" type="submit" th:value="#{submit}"/></p>
                 </form>
             </div>
         </div>

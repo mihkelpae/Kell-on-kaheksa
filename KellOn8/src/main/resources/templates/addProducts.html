@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/html">
+<html th:lang="#{language_code}" xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/html">
 <head>
     <th:block th:include="fragments/head :: head"/>
     <th:block th:include="fragments/header :: header"/>
-    <title>Add products</title>
+    <title th:text="#{add_products_title}"></title>
     <div th:replace="fragments/header :: header"></div>
 </head>
 
@@ -17,25 +17,25 @@
 
     <form action="#" th:action="@{/saveProduct}" th:object="${product}" method="post">
         <input type="hidden" th:field="*{id}" />
-        <p>Name: <input type="text" th:field="*{productName}" th:required="required" /></p>
-        <p>Category:
+        <p th:text="#{product_name_input}"></p><input type="text" th:field="*{productName}" th:required="required" />
+        <p th:text="#{product_category_input}"/>
             <select th:field="*{category}">
-                <option th:value="'Käekell'" th:text="Käekell"></option>
-                <option th:value="'Taskukell'" th:text="Taskukell"></option>
-                <option th:value="'Seinakell'" th:text="Seinakell"></option>
-                <option th:value="'Äratuskell'" th:text="Äratuskell"></option>
-                <option th:value="'Spordikell'" th:text="Spordikell"></option>
-                <option th:value="'Stopper'" th:text="Stopper"></option>
+                <option th:value="'Käekell'" th:text="#{watch}"></option>
+                <option th:value="'Taskukell'" th:text="#{pocket_clock}"></option>
+                <option th:value="'Seinakell'" th:text="#{wall_clock}"></option>
+                <option th:value="'Äratuskell'" th:text="#{alarm_clock}"></option>
+                <option th:value="'Spordikell'" th:text="#{sport_watch}"></option>
+                <option th:value="'Stopper'" th:text="#{stopwatch}"></option>
             </select>
         </p>
-        <p>Price: <input type="number" th:field="*{price}" th:required="required"/></p>
-        <p>Quantity: <input type="number" th:field="*{quantity}" th:required="required"/></p>
-        <p>Description: <input type="text" th:field="*{productDescription}" th:required="required"/></p>
-        <p>Short description: <input type="text" th:field="*{productShortDescription}" th:required="required"/></p>
-        <p><input type="submit" value="Submit" /><input type="reset" value="Reset" /></p>
+        <p th:text="#{price}"/><input type="number" th:field="*{price}" th:required="required" min="0"/></p>
+        <p th:text="#{quantity}"/><input type="number" th:field="*{quantity}" th:required="required" min="1"/></p>
+        <p th:text="#{desc}"/><input type="text" th:field="*{productDescription}" th:required="required"/></p>
+        <p th:text="#{short_desc}"/><input type="text" th:field="*{productShortDescription}" th:required="required"/></p>
+        <p><input type="submit" th:value="#{submit_form}" /><input type="reset" th:value="#{reset_form}" /></p>
     </form>
 
-    <a href="/allProducts">See all products</a>
+    <a href="/allProducts" th:text="#{see_all_products}"></a>
 </div>
 
 

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html th:lang="#{language_code}" xmlns:th="http://www.thymeleaf.org">
 <head>
     <th:block th:include="fragments/head :: head"/>
     <th:block th:include="fragments/header :: header"/>
-    <title>About</title>
+    <title th:text="#{about_title}"></title>
     <div th:replace="fragments/header :: header"></div>
 </head>
 <body>
@@ -12,7 +12,7 @@
     <!-- Mapist kõrgemal olev osa-->
     <div class="row">
         <div class="col-4 offset-4 justify-content-center">
-            <h2>Who are we?!?!</h2>
+            <h2 th:text="#{about_header}">Who are we?!?!</h2>
         </div>
     </div>
     <br>

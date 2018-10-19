@@ -3,7 +3,7 @@
 <head>
     <th:block th:include="fragments/head :: head"/>
     <th:block th:include="fragments/header :: header"/>
-    <title>Products</title>
+    <title th:title="#{products_title}"></title>
     <div th:replace="fragments/header :: header"></div>
 </head>
 
@@ -12,11 +12,10 @@
 <div class="container-fluid">
     <div class="body">
         <div class="row">
-            <div class="col-8"  id="valitudKat"><h2>Kategooria</h2></div>
+            <div class="col-8"  id="valitudKat"><h2 th:text="#{product_category}"></h2></div>
             <div class="col-4 float-right" id="shoppingCart">
                 <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Shopping cart
+                    <button th:text="#{cart}" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                         <div class="row">
@@ -39,8 +38,8 @@
         <div class="w-100"></div>
         <div class="col" id="productCategories">
             <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Categories
+                <button th:text="#{choose_category}" class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                     <button class="dropdown-item active" id="kat1Nupp" type="button">Cat1</button>
