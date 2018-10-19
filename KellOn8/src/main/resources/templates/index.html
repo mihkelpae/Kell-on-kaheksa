@@ -45,25 +45,16 @@
             <div class="w-100"></div>
             <br>
 
+            <!--Sending automatic e-mails-->
             <div class="col-2 offset-4" id="loadMore" >
                 <button onclick="loadMail()" class="btn-info" data-toggle="tooltip" title="Siia vajutades laetakse rohkem sisu">Load more</button>
             </div>
             <div class="col-12" id="loadMail">
-                <label for="aadress" data-toggle="tooltip" title="See funktsioon ei tööta">Teie e-maili aadress:</label>
-                <input type="text" id="aadress">
-                <button type="button" id ="meil" class="btn">Saada info meilile</button>
-                <!--<form action="#" th:action=""-->
-                <!--<form action="#" th:action="@{/}" th:object="${mail}" method="post">
-                    <table border="1">
-                        <tr>
-                            <td><label text="E-mail address"/></td>
-                            <td><input type="email" th:field="*{email}"/></td>
-                        </tr>
-                        <tr>
-                            <td><input class="btn-danger" type="submit" value="Submit"></td>
-                        </tr>
-                    </table>
-                </form>-->
+                <form action="#" th:action="@{/mailSent}" method="post">
+                    <p>If you wish to receive an automatic email, enter your email address below and click on "Submit"</p>
+                    <p>Email: <input type="email" name="address" th:required="required"/></p>
+                    <p><input class="btn-dark" type="submit" value="Submit"/></p>
+                </form>
             </div>
         </div>
     </div>

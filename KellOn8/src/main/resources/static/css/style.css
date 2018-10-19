@@ -28,6 +28,10 @@ body {
     padding-top: 10px;
 }
 
+#loadMore {
+    display: block;
+}
+
 .tooltip {
     position: relative;
     display: inline-block;
