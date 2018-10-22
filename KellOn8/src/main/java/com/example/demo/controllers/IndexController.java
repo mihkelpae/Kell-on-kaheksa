@@ -1,25 +1,26 @@
 package com.example.demo.controllers;
 
+import com.example.demo.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.mail.internet.MimeMessage;
-
 @Controller
 public class IndexController {
 
     @Autowired
     public JavaMailSender sender;
+    @Autowired
+    ProductRepository productRepository;
 
     @RequestMapping(value="/", method = RequestMethod.GET)
-    public String home(){
+    public String home(Model model){
+        model.addAttribute("top3", productRepository.find3MostExpensive());
         return "index";
     }
 

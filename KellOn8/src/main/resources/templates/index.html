@@ -28,6 +28,7 @@
             <div class="col-12">
                 <div class="hotProducts">
                     <div class="row align-items-center">
+                        <!--
                         <div class="col">
                             <img class="toaster1" src=https://static1.nordic.pictures/3209457-thickbox_default/tss801ss-taoster.jpg width="65%" height="65%">
                             <div th:text="#{sampleText}"></div>
@@ -40,6 +41,12 @@
                             <img class="toaster1" src=https://static1.nordic.pictures/3209457-thickbox_default/tss801ss-taoster.jpg width="65%" height="65%">
                             <div th:text="#{sampleText}"></div>
                         </div>
+                        -->
+                        <tr th:each="product : ${top3}">
+                            <div class="col">
+                                <td th:text="${product.productName}"></td>
+                            </div>
+                        </tr>
                     </div>
                 </div>
             </div>
