@@ -21,6 +21,9 @@ public class IndexController {
     @RequestMapping(value="/", method = RequestMethod.GET)
     public String home(Model model){
         model.addAttribute("top3", productRepository.find3MostExpensive());
+        model.addAttribute("productsInCategory", productRepository.countProductsByCategory());
+        model.addAttribute("productCategories", productRepository.showProductCategories());
+
         return "index";
     }
 

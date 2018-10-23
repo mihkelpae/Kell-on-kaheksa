@@ -32,6 +32,7 @@ public class AllProductsController {
     @RequestMapping("/allProducts/edit/{id}")
     public String editProduct(@PathVariable Long id, Model model){
         model.addAttribute("product", productRepository.findById(id));
+
         productRepository.deleteById(id);
         return "/addProducts";
     }
