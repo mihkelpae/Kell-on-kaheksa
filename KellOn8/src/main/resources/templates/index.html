@@ -25,26 +25,28 @@
                 <h1 data-toggle="tooltip" title="See tekst on rakendusesisene abiinfo" th:text="#{hotProducts}"></h1>
             </div>
             <div class="w-100"></div>
+
+            <!--Home page "hot" products which are actually the most expensive ones-->
             <div class="col-12">
                 <div class="hotProducts">
                     <div class="row align-items-center">
-                        <!--
-                        <div class="col">
-                            <img class="toaster1" src=https://static1.nordic.pictures/3209457-thickbox_default/tss801ss-taoster.jpg width="65%" height="65%">
-                            <div th:text="#{sampleText}"></div>
-                        </div>
-                        <div class="col">
-                            <img class="toaster1" src=https://static1.nordic.pictures/3209457-thickbox_default/tss801ss-taoster.jpg width="65%" height="65%">
-                            <div th:text="#{sampleText}"></div>
-                        </div>
-                        <div class="col">
-                            <img class="toaster1" src=https://static1.nordic.pictures/3209457-thickbox_default/tss801ss-taoster.jpg width="65%" height="65%">
-                            <div th:text="#{sampleText}"></div>
-                        </div>
-                        -->
                         <tr th:each="product : ${top3}">
                             <div class="col">
-                                <td th:text="${product.productName}"></td>
+                                <div id="tootePilt">
+                                    <img class="blankPicture" src="https://via.placeholder.com/250x250" alt="blank">
+                                </div>
+                                <div id="tooteNimi">
+                                    <td th:text="${product.productName}">
+                                </div>
+                                <div id="tooteHind">
+                                    <td th:text="${product.price}">
+                                </div>
+                                <div id="tooteLühikirjeldus">
+                                    <td th:text="${product.productShortDescription}">
+                                </div>
+                                <div>
+                                    <button class="btn-dark">Add to cart</button>
+                                </div>
                             </div>
                         </tr>
                     </div>
@@ -64,6 +66,7 @@
                     <p><input class="btn-dark" type="submit" th:value="#{submit}"/></p>
                 </form>
             </div>
+
         </div>
     </div>
 </div>

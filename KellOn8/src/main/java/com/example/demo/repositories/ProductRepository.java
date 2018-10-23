@@ -14,6 +14,8 @@ public interface ProductRepository extends CrudRepository<Product, Long> {
     @Query(value="select * from products where category = :cat", nativeQuery = true)
     List<Product> findByCategory(@Param("cat") String category);
 
-    @Query(value="select * from products where category='Kuldkell'", nativeQuery = true)
+    @Query(value="select * from products order by price desc limit 3", nativeQuery = true)
     List<Product> find3MostExpensive();
+
+    //Tuleb lisada sum funkstiooniga toodete arv kategoorias ja lisada see esilehele
 }
