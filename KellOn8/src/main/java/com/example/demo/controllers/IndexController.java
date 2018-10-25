@@ -23,6 +23,10 @@ public class IndexController {
         model.addAttribute("top3", productRepository.find3MostExpensive());
         model.addAttribute("productsInCategory", productRepository.countProductsByCategory());
         model.addAttribute("productCategories", productRepository.showProductCategories());
+        model.addAttribute("uniqueProductCount", productRepository.countOfUniqueProducts());
+        model.addAttribute("productCount", productRepository.countOfAllProducts());
+
+
 
         return "index";
     }

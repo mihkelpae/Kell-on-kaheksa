@@ -26,5 +26,13 @@ public interface ProductRepository extends CrudRepository<Product, Long> {
     @Query(value="select category from products group by category", nativeQuery = true)
     List<String> showProductCategories();
 
+    //Leian unikaalsete toodete arvu
+    @Query(value="select count(id) from products", nativeQuery = true)
+    Integer countOfUniqueProducts();
+
+    //Leain kogu toodete arvu
+    @Query(value="select sum(quantity) from products", nativeQuery = true)
+    Integer countOfAllProducts();
+
 
 }

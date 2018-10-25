@@ -20,7 +20,11 @@
                 </div>
             </div>
             <div class="w-100"></div>
-            <div id="productCountByCat">
+
+            <!-- Selle võiks mingile admini lehele ümber tõsta, aga las olla praegu siin-->
+            <div id="productsInfo">
+                <p id="countOfUniqueProducts" th:text="${'Unique products in warehouse: ' + uniqueProductCount}"></p>
+                <p id="countOfProducts" th:text="${'Total products in warehouse: ' + productCount}"></p>
                 <!-- Siia peab lisama selle, et näitaks kui plaju tooteid on kategoorias
                 See on lihtsalt selleks, et count funktsiooni oleks kasutatud
                 <table class="table table-striped">

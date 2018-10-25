@@ -1,5 +1,7 @@
 package com.example.demo.entities;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
@@ -34,9 +36,6 @@ public class Product {
     @Column(name = "price")
     private float price;
 
-    /*@Column(name = "picture")
-    private byte[] picture;*/
-
     public Long getId() {
         return id;
     }
@@ -45,13 +44,6 @@ public class Product {
         return productName;
     }
 
-   /* public byte[] getPicture() {
-        return picture;
-    }
-
-    public void setPicture(byte[] picture) {
-        this.picture = picture;
-    }*/
 
     public void setProductName(String productName) {
         this.productName = productName;

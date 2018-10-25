@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.servlet.http.HttpServletRequest;
+
 @Controller
 public class AddProductsController {
 
@@ -27,7 +29,8 @@ public class AddProductsController {
     }
 
     @RequestMapping(value="/saveProduct", method = RequestMethod.POST)
-    public String saveProduct(@ModelAttribute Product product, Model model,
+    public String saveProduct(@ModelAttribute Product product,
+                              Model model,
                               RedirectAttributes redirectAttributes) {
         redirectAttributes.addFlashAttribute("productAdded", "" +
                 "Product has been added.");
