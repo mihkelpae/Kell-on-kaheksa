@@ -4,7 +4,7 @@
     <meta charset="UTF-8" name="description" content="All the current products. Kell on kaheksa website has thousands of products and in here you can find appropriate watch for your wife or husband.">
     <th:block th:include="fragments/head :: head"/>
     <th:block th:include="fragments/header :: header"/>
-    <title>All products</title>
+    <title th:text="#{all_products_title}"></title>
     <div th:replace="fragments/header :: header"></div>
 </head>
 <body>
@@ -14,20 +14,24 @@
         <p th:text="${message}">success message</p>
     </div>
 
-    <h1>ALL PRODUCTS</h1>
+    <div id="productsInfo">
+        <p id="countOfUniqueProducts" th:text="#{nr_of_unique_products} + ${uniqueProductCount}"></p>
+        <p id="countOfProducts" th:text="#{nr_of_total_products} + ${productCount}"></p>
+    </div>
+
     <div th:if="${not #lists.isEmpty(product)}">
-        <h2>Products</h2>
+        <h2 th:text="#{all_products_table}"></h2>
         <table class="table table-striped">
             <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Category</th>
-                <th>Price</th>
-                <th>Quantity</th>
-                <th>Description</th>
-                <th>Short description</th>
-                <th>Edit</th>
-                <th>Delete</th>
+                <th th:text="#{product_id_table}"></th>
+                <th th:text="#{product_name_table}"></th>
+                <th th:text="#{product_category_table}"></th>
+                <th th:text="#{product_price_table}"></th>
+                <th th:text="#{product_quantity_table}">Quantity</th>
+                <th th:text="#{product_description_table}">Description</th>
+                <th th:text="#{product_s_description_table}">Short description</th>
+                <th th:text="#{product_edit_table}">Edit</th>
+                <th th:text="#{product_delete_table}">Delete</th>
             </tr>
             <tr th:each="product : ${product}">
                 <td th:text="${product.id}"></td>

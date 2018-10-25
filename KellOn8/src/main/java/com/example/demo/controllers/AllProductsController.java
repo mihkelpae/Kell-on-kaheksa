@@ -17,8 +17,10 @@ public class AllProductsController {
 
     @RequestMapping(value = "/allProducts", method = RequestMethod.GET)
     public String loadAll(Model model) {
-            model.addAttribute("product", productRepository.findAll());
-            return "allProducts";
+        model.addAttribute("product", productRepository.findAll());
+        model.addAttribute("uniqueProductCount", productRepository.countOfUniqueProducts());
+        model.addAttribute("productCount", productRepository.countOfAllProducts());
+        return "allProducts";
     }
 
     @RequestMapping("/allProducts/delete/{id}")
