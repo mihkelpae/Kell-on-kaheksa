@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html th:lang="#{language_code}" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" name="description" content="Upload a profile of yours so we can truly see who you are. ">
     <th:block th:include="fragments/head :: head"/>
@@ -18,34 +18,13 @@
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#uploadProfilePic">
                     Upload your profile picture
                 </button>
-                <div class="modal fade" id="uploadProfilePic" tabindex="-1" role="dialog" aria-labelledby="uploadProfilePicture" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="uploadLabel">Choose the file you wish to upload</h5>
-                            </div>
-                            <div class="modal-body">
-                                <form method="POST" action="getdata.php" enctype="multipart/form-data">
-                                    <input type="file" name="myimage">
-                                    <input type="submit" name="submit_image" value="Upload">
-                                </form>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Upload</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
             </div>
             <div class="col-7 float-right" id="isikuInfo">
                 <p>Inimese nimi: Registreerimisest saadud nimi</p>
                 <p>E-mail: Registreerimisest saadud meiliaadress</p>
                 <label for="aadress">Aadress:</label>
                 <input type="text" id="aadress">
-                <br>
-                <label for="makseinfo">Makseinfo:</label>
-                <input type="text" id="makseinfo">
             </div>
         </div>
     </div>

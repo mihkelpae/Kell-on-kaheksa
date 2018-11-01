@@ -34,7 +34,7 @@ public class Product {
 
     @NotNull
     @Column(name = "price")
-    private float price;
+    private double price;
 
     public Long getId() {
         return id;
@@ -73,11 +73,11 @@ public class Product {
         this.productDescription = productDescription;
     }
 
-    public float getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(float price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 

@@ -10,45 +10,32 @@ public class User {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "username")
-    private String username;
+    @Column(name="email")
+    private String email;
 
-    @Column(name = "firstName")
+    @Column(name="firstName")
     private String firstName;
 
-    @Column(name = "lastName")
+    @Column(name="lastName")
     private String lastName;
 
-    @Column(name = "address")
-    private String address;
-
-    @Column(name = "paymentStyle")
-    private String paymentStyle;
-
-    @Column(name = "profilePicPath")
-    private String profilePicPath;
-
-    @Column(name = "usergroup")
-    private String usergroup;
-
-    public String getUsergroup() {
-        return usergroup;
-    }
-
-    public void setUsergroup(String usergroup) {
-        this.usergroup = usergroup;
-    }
+    @Column(name="googleUid")
+    private String googleUid;
 
     public Long getId() {
         return id;
     }
 
-    public String getUsername() {
-        return username;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getFirstName() {
@@ -67,19 +54,11 @@ public class User {
         this.lastName = lastName;
     }
 
-    public String getAddress() {
-        return address;
+    public String getGoogleUid() {
+        return googleUid;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getPaymentStyle() {
-        return paymentStyle;
-    }
-
-    public void setPaymentStyle(String paymentStyle) {
-        this.paymentStyle = paymentStyle;
+    public void setGoogleUid(String googleUid) {
+        this.googleUid = googleUid;
     }
 }

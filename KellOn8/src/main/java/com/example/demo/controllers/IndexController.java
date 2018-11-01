@@ -1,6 +1,8 @@
 package com.example.demo.controllers;
 
+import com.example.demo.entities.User;
 import com.example.demo.repositories.ProductRepository;
+import com.example.demo.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -9,6 +11,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import java.security.Principal;
 
 @Controller
 public class IndexController {
@@ -19,11 +23,16 @@ public class IndexController {
     ProductRepository productRepository;
 
     @RequestMapping(value="/", method = RequestMethod.GET)
-    public String home(Model model){
+    public String home(Model model, Principal principal){
         model.addAttribute("top3", productRepository.find3MostExpensive());
         model.addAttribute("productsInCategory", productRepository.countProductsByCategory());
         model.addAttribute("productCategories", productRepository.showProductCategories());
 
+/*
+        if (principal != null){
+            model.addAttribute("loggedUser", kasutaja.getFirstName());
+        }
+*/
         return "index";
     }
 

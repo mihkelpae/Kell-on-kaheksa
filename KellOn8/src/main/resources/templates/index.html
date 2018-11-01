@@ -21,8 +21,6 @@
             </div>
             <div class="w-100"></div>
 
-            <!-- Selle võiks mingile admini lehele ümber tõsta, aga las olla praegu siin-->
-
             <div class="col-12" id="whatsHot">
                 <h1 data-toggle="tooltip" title="See tekst on rakendusesisene abiinfo" th:text="#{hotProducts}"></h1>
             </div>
@@ -56,6 +54,10 @@
             </div>
             <div class="w-100"></div>
             <br>
+            <div th:if="${not #lists.isEmpty(loggedUser)}">
+                <h4 th:text="${loggedUser}"></h4>
+            </div>
+            <div class="w-100"></div>
 
             <!--Sending automatic e-mails-->
             <div class="col-2 offset-4" id="loadMore" >
