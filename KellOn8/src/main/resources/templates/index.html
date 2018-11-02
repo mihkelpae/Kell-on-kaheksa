@@ -54,9 +54,10 @@
             </div>
             <div class="w-100"></div>
             <br>
-            <div th:if="${not #lists.isEmpty(loggedUser)}">
-                <h4 th:text="${loggedUser}"></h4>
-            </div>
+
+            <h3 th:if="${user!=null}" th:text="${user.email}"></h3>
+            <h3 th:if="${user==null}" th:text="'Not logged in!'"></h3>
+
             <div class="w-100"></div>
 
             <!--Sending automatic e-mails-->

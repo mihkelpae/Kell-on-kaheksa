@@ -25,14 +25,7 @@ public class IndexController {
     @RequestMapping(value="/", method = RequestMethod.GET)
     public String home(Model model, Principal principal){
         model.addAttribute("top3", productRepository.find3MostExpensive());
-        model.addAttribute("productsInCategory", productRepository.countProductsByCategory());
-        model.addAttribute("productCategories", productRepository.showProductCategories());
 
-/*
-        if (principal != null){
-            model.addAttribute("loggedUser", kasutaja.getFirstName());
-        }
-*/
         return "index";
     }
 

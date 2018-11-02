@@ -6,10 +6,6 @@ import javax.persistence.*;
 public class User {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    @Column(name = "id")
-    private Long id;
-
     @Column(name="email")
     private String email;
 
@@ -19,16 +15,8 @@ public class User {
     @Column(name="lastName")
     private String lastName;
 
-    @Column(name="googleUid")
-    private String googleUid;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
+    @Column(name="uid")
+    private String uid;
 
     public String getEmail() {
         return email;
@@ -54,11 +42,11 @@ public class User {
         this.lastName = lastName;
     }
 
-    public String getGoogleUid() {
-        return googleUid;
+    public String getUid() {
+        return uid;
     }
 
-    public void setGoogleUid(String googleUid) {
-        this.googleUid = googleUid;
+    public void setUid(String googleUid) {
+        this.uid = googleUid;
     }
 }

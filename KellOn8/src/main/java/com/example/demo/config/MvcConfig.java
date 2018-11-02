@@ -13,6 +13,19 @@ import java.util.Locale;
 @Configuration
 public class MvcConfig extends WebMvcConfigurerAdapter {
 
+    @Configuration
+    public class WebConfig extends WebMvcConfigurerAdapter {
+        @Bean
+        public ModelAndViewUserInterceptor modelAndViewUserInterceptor() {
+            return new ModelAndViewUserInterceptor();
+        }
+
+        @Override
+        public void addInterceptors(InterceptorRegistry registry) {
+            registry.addInterceptor(modelAndViewUserInterceptor());
+        }
+    }
+
     @Bean
     public LocaleResolver localeResolver(){
         SessionLocaleResolver sessionLocaleResolver = new SessionLocaleResolver();
