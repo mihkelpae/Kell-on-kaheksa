@@ -22,23 +22,22 @@
                 <li class="nav-item">
                     <a class="nav-link" href="help" data-toggle="tooltip" title="Siit navigeerid hetkel tühjale lehele" th:text="#{help}"></a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" th:if="${user!=null}">
+                    <a class="nav-link" href="profile" data-toggle="tooltip" title="Profiil" th:text="#{profile_page}"></a>
+                </li>
+                <li class="nav-item" th:if="${user!=null}">
                     <a class="nav-link" href="addProducts" data-toggle="tooltip" title="Siin saab tulevikus toodeid lisada" th:text="#{add_products}"></a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <b th:text="#{log_in}"></b>
+                <li class="nav-item" th:if="${user==null}">
+                    <a class="btn btn-block btn-social btn-google" href="/login" th:text="#{login_w_google}">
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <div id="loginRegister">
-                            <div class="col">
-                                <a class="btn btn-block btn-social btn-google" href="/login">
-                                    <span class="fa fa-google"></span> Log in with Google
-                                </a>
-                            </div>
-                        </div>
-                    </div>
                 </li>
+                <li class="nav-item" th:unless="${user==null}">
+                    <a class="btn btn-block btn-social btn-google" href="/logout"
+                       th:text="#{logged_as} + ${user.firstName} + #{log_out}">
+                    </a>
+                </li>
+
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <b th:text="#{language}"></b>

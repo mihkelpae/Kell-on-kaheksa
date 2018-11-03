@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html th:lang="#{language_code}" xmlns:th="http://www.thymeleaf.org">
+<html th:lang="#{language_code}" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8" name="description" content="Incase you get lost, you can always get help from here. We are here for you 24/7.">
     <th:block th:include="fragments/head :: head"/>
@@ -13,6 +13,18 @@
 
 <div class="container-fluid">
 
+    <div class="col-10">
+        <div th:if="${reviewAdded}" class="alert alert-success" role="alert">
+            <p th:text="#{review_added}"></p>
+        </div>
+    </div>
+
+    <h3 th:text="#{leave_us_reply}"></h3>
+
+    <form action="#" th:action="@{/replySaved}" th:object="${review}" method="post">
+        <p th:text="#{user_reply_input}"></p><input type="text" th:field="*{reply}" th:required="required" />
+        <p><input type="submit" th:value="#{submit_form}"></p>
+    </form>
 </div>
 
 </body>

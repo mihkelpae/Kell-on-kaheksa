@@ -11,8 +11,10 @@
 <body>
 <div class="container-fluid">
 
-    <div th:if="${message}" class="alert alert-success" role="alert">
-        <p th:text="${message}">success message</p>
+    <div class="col-10">
+        <div th:if="${message}" class="alert alert-success" role="alert">
+            <p th:text="#{all_message}"></p>
+        </div>
     </div>
 
     <div id="productsInfo">

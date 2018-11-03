@@ -12,13 +12,15 @@
 
 <div class="container-fluid">
 
-    <div th:if="${productAdded}" class="alert alert-success" role="alert">
-        <p th:text="${productAdded}">success message</p>
+    <div class="col-10">
+        <div th:if="${productAdded}" class="alert alert-success" role="alert">
+            <p th:text="#{product_added}"></p>
+        </div>
     </div>
 
     <form action="#" th:action="@{/saveProduct}" th:object="${product}" method="post">
         <input type="hidden" th:field="*{id}" />
-        <p th:text="#{product_name_input}"></p><input type="text" th:field="*{productName}" th:required="required" />
+        <p th:text="#{product_name_input}"/><input type="text" th:field="*{productName}" th:required="required" />
         <p th:text="#{product_category_input}"/>
             <select th:field="*{category}">
                 <option th:value="'Käekell'" th:text="#{watch}"></option>

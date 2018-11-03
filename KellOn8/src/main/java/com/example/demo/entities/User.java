@@ -18,6 +18,17 @@ public class User {
     @Column(name="uid")
     private String uid;
 
+    @Column(name="address")
+    private String address;
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     public String getEmail() {
         return email;
     }

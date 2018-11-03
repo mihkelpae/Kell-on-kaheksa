@@ -13,18 +13,27 @@
 <div class="container-fluid">
     <div class="body">
         <div class="row">
-            <div class="col-4" id="profiilipilt">
+
+            <form action="#" th:action="@{/saveProfilePicture}" th:object="profilePicture" enctype="multipart/form-data" method="post">
+                <p><label for="profiilipilt" th:text="Profile picture"></label></p>
+                <input type="file" id="picture" name="picture" th:required="required" />
+                <input type="submit" th:value="#{submit_form}">
+            </form>
+
+            <div class="col" id="profiilipilt">
                 <img src="http://www.clker.com/cliparts/1/o/F/g/6/N/full-black-square-md.png" alt="Black screen">
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#uploadProfilePic">
                     Upload your profile picture
                 </button>
 
             </div>
-            <div class="col-7 float-right" id="isikuInfo">
-                <p>Inimese nimi: Registreerimisest saadud nimi</p>
-                <p>E-mail: Registreerimisest saadud meiliaadress</p>
-                <label for="aadress">Aadress:</label>
-                <input type="text" id="aadress">
+            <div class="col float-right" id="isikuInfo">
+                <div id="usersName" th:text="#{your_name} + ${user.firstName} + ' ' + ${user.lastName}"></div>
+
+                <form action="#" th:action="@{/saveProfileAddress}" th:object="${user}" method="post">
+                    <p th:text="#{user_address_input}"></p><input type="text" th:field="*{address}" th:required="required" />
+                    <p><input type="submit" th:value="#{submit_form}" /><input type="reset" th:value="#{reset_form}" /></p>
+                </form>
             </div>
         </div>
     </div>
