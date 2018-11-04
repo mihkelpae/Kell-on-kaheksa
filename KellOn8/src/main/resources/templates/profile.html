@@ -12,27 +12,37 @@
 
 <div class="container-fluid">
     <div class="body">
+        <div class="col-10">
+            <div th:if="${fileUploadError}" class="alert alert-danger" role="alert">
+                <p th:text="#{file_upload_failure}"></p>
+            </div>
+        </div>
         <div class="row">
 
-            <form action="#" th:action="@{/saveProfilePicture}" th:object="profilePicture" enctype="multipart/form-data" method="post">
-                <p><label for="profiilipilt" th:text="Profile picture"></label></p>
-                <input type="file" id="picture" name="picture" th:required="required" />
-                <input type="submit" th:value="#{submit_form}">
-            </form>
+            <div class="col">
+                <div th:if="${picture==null}">
+                    <h4 th:text="#{upload_picture}"></h4>
+                    <img src="http://www.clker.com/cliparts/1/o/F/g/6/N/full-black-square-md.png" alt="Black screen">
+                    <form th:action="@{/uploadProfilePic}" enctype="multipart/form-data" method="post">
+                        <input type="file" id="file" name="file" th:required="required" />
+                        <input type="submit" th:value="#{submit_form}">
+                    </form>
+                </div>
+                <div th:unless="${picture==null}">
+                    <img th:src="${picture}" alt="Profile picture">
+                    <form th:action="@{/deleteProfilePic}" method="post">
+                        <input type="submit" th:value="#{delete_profile_pic}">
+                    </form>
+                </div>
 
-            <div class="col" id="profiilipilt">
-                <img src="http://www.clker.com/cliparts/1/o/F/g/6/N/full-black-square-md.png" alt="Black screen">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#uploadProfilePic">
-                    Upload your profile picture
-                </button>
-
+                <!--siia tuleb lisada pildi kustutamine ja see et üleslaadimine õnnestus-->
             </div>
             <div class="col float-right" id="isikuInfo">
                 <div id="usersName" th:text="#{your_name} + ${user.firstName} + ' ' + ${user.lastName}"></div>
 
                 <form action="#" th:action="@{/saveProfileAddress}" th:object="${user}" method="post">
                     <p th:text="#{user_address_input}"></p><input type="text" th:field="*{address}" th:required="required" />
-                    <p><input type="submit" th:value="#{submit_form}" /><input type="reset" th:value="#{reset_form}" /></p>
+                    <p><input type="submit" th:value="#{submit_form}"></p>
                 </form>
             </div>
         </div>
