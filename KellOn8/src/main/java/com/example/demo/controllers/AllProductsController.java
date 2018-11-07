@@ -31,7 +31,7 @@ public class AllProductsController {
         return "redirect:/allProducts";
     }
 
-    @RequestMapping("/allProducts/edit/{id}")
+    @RequestMapping(value = "/allProducts/edit/{id}", method = RequestMethod.GET)
     public String editProduct(@PathVariable Long id, Model model){
         model.addAttribute("product", productRepository.findById(id));
 
