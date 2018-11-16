@@ -2,17 +2,17 @@ package com.example.demo.entities;
 
 import javax.persistence.*;
 
-@Table(name="ip")
+@Table(name="browser")
 @Entity
-public class IP {
+public class Browser {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     @Column(name = "id")
     private Long id;
 
-    @Column(name="IP")
-    private String name;
+    @Column(name="browser")
+    private String browser;
 
     @Column(name="URI")
     private String URI;
@@ -25,8 +25,8 @@ public class IP {
         this.URI = URI;
     }
 
-    public IP(String name, String URI) {
-        this.name = name;
+    public Browser(String browser, String URI) {
+        this.browser = browser;
         this.URI = URI;
     }
 
@@ -38,11 +38,11 @@ public class IP {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getBrowser() {
+        return browser;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setBrowser(String browser) {
+        this.browser = browser;
     }
 }

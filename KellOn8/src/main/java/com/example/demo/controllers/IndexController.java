@@ -1,6 +1,7 @@
 package com.example.demo.controllers;
 
 import com.example.demo.entities.User;
+import com.example.demo.repositories.BrowserRepository;
 import com.example.demo.repositories.ProductRepository;
 import com.example.demo.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,10 +22,13 @@ public class IndexController {
     public JavaMailSender sender;
     @Autowired
     ProductRepository productRepository;
+    @Autowired
+    BrowserRepository browserRepository;
 
     @RequestMapping(value="/", method = RequestMethod.GET)
     public String home(Model model, Principal principal){
         model.addAttribute("top3", productRepository.find3MostExpensive());
+        model.addAttribute("topBrowser", browserRepository.findBrowsers());
 
         return "index";
     }

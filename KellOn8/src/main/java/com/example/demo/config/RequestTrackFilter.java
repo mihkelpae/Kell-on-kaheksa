@@ -3,8 +3,10 @@ package com.example.demo.config;
 import com.example.demo.entities.IP;
 import com.example.demo.entities.OS;
 import com.example.demo.entities.User;
+import com.example.demo.repositories.BrowserRepository;
 import com.example.demo.repositories.IPRepository;
 import com.example.demo.repositories.OSRepository;
+import eu.bitwalker.useragentutils.Browser;
 import eu.bitwalker.useragentutils.OperatingSystem;
 import eu.bitwalker.useragentutils.UserAgent;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +25,9 @@ public class RequestTrackFilter implements Filter {
     @Autowired
     IPRepository ipRepository;
 
+    @Autowired
+    BrowserRepository browserRepository;
+
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {}
 
@@ -35,21 +40,23 @@ public class RequestTrackFilter implements Filter {
 
         UserAgent userAgent = UserAgent.parseUserAgentString(header);
 
-        String os = userAgent.getOperatingSystem().getName();
         String requestURI = servletRequest.getRequestURI();
+
+        String os = userAgent.getOperatingSystem().getName();
         OS opsys = new OS(os, requestURI);
-
-        //Kontorlli kas on peamine leht või läheb ka staticusse.
-        //servletRequest.getRequestURI();
-
         osRepository.save(opsys);
-        System.out.println(os);
-        System.out.println(servletRequest.getRequestURI());
 
         final String ip = request.getRemoteAddr();
         IP address = new IP(ip, requestURI);
         ipRepository.save(address);
-        System.out.println(ip);
+
+        Browser browser = userAgent.getBrowser();
+        String browserName = browser.getName();
+        com.example.demo.entities.Browser browserInfo = new com.example.demo.entities.Browser(browserName, requestURI);
+        browserRepository.save(browserInfo);
+
+
+        //Pollapist tuleb võtta ja teha nii, et liiga palju erqueste ei ajaks asja kokku
     }
 
     @Override
