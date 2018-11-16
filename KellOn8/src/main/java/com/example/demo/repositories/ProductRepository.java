@@ -34,5 +34,8 @@ public interface ProductRepository extends CrudRepository<Product, Long> {
     @Query(value="select sum(quantity) from products", nativeQuery = true)
     Integer countOfAllProducts();
 
+    //Leian kõik tooted
+    @Query(value="select * from products", nativeQuery=true)
+    List<Product> findAll();
 
 }
