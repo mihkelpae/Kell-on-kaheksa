@@ -26,7 +26,7 @@ public class ProfilePictureUploadController {
     UserPicturesRepositoryService userPicturesRepositoryService;
 
     @RequestMapping(value="/uploadProfilePic", method = RequestMethod.POST)
-    public String uploadFile(@RequestParam("file")MultipartFile file ,
+    public String uploadFile(@RequestParam("file")MultipartFile file,
                              Principal principal, Model model) throws Exception{
         try {
             userPicturesRepositoryService.storeFile(file, principal);
