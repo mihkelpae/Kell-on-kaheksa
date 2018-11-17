@@ -38,14 +38,10 @@ public class LocationLookupService implements Runnable{
 
             jsonObject = new JSONObject(scanner.nextLine());
 
-            try {
                 System.out.println(jsonObject.getString("city"));
                 String city = jsonObject.getString("city");
                 ipRepository.updateLocation(city, ip);
-            }
-            catch (Exception e) {
-                System.out.println("You are using localhost, there is no location for you mate");
-            }
+                System.out.println("You are using localhost, there is no location for you mate. Or something else");
         } catch (UnknownHostException e) {
             System.out.println("No internet connection, cannot find location");
         }

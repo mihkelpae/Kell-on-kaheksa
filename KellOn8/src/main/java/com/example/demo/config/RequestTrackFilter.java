@@ -47,8 +47,8 @@ public class RequestTrackFilter implements Filter {
 
         String os = userAgent.getOperatingSystem().getName();
 
-            OS opsys = new OS(os, requestURI);
-            osRepository.save(opsys);
+        OS opsys = new OS(os, requestURI);
+        osRepository.save(opsys);
 
 
         final String ip = request.getRemoteAddr();
@@ -57,10 +57,10 @@ public class RequestTrackFilter implements Filter {
         locationLookupService.updateLoc(ip);
 
 
-            Browser browser = userAgent.getBrowser();
-            String browserName = browser.getName();
-            com.example.demo.entities.Browser browserInfo = new com.example.demo.entities.Browser(browserName, requestURI);
-            browserRepository.save(browserInfo);
+        Browser browser = userAgent.getBrowser();
+        String browserName = browser.getName();
+        com.example.demo.entities.Browser browserInfo = new com.example.demo.entities.Browser(browserName, requestURI);
+        browserRepository.save(browserInfo);
 
     }
 
