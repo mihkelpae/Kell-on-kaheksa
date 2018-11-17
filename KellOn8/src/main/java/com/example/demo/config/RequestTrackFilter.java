@@ -46,28 +46,22 @@ public class RequestTrackFilter implements Filter {
         String requestURI = servletRequest.getRequestURI();
 
         String os = userAgent.getOperatingSystem().getName();
-        try {
+
             OS opsys = new OS(os, requestURI);
             osRepository.save(opsys);
-        }
-        catch (DataIntegrityViolationException error) {
-            System.out.println(error);
-        }
+
 
         final String ip = request.getRemoteAddr();
         IP address = new IP(ip, requestURI);
         ipRepository.save(address);
         locationLookupService.updateLoc(ip);
 
-        try {
+
             Browser browser = userAgent.getBrowser();
             String browserName = browser.getName();
             com.example.demo.entities.Browser browserInfo = new com.example.demo.entities.Browser(browserName, requestURI);
             browserRepository.save(browserInfo);
-        }
-        catch (DataIntegrityViolationException error) {
-            System.out.println(error);
-        }
+
     }
 
     @Override
