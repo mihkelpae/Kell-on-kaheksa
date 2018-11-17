@@ -51,15 +51,15 @@ public class RequestTrackFilter implements Filter {
         final String ip = request.getRemoteAddr();
         IP address = new IP(ip, requestURI);
         ipRepository.save(address);
+        locationLookupService.updateLoc(ip);
 
         Browser browser = userAgent.getBrowser();
         String browserName = browser.getName();
         com.example.demo.entities.Browser browserInfo = new com.example.demo.entities.Browser(browserName, requestURI);
         browserRepository.save(browserInfo);
 
-        locationLookupService.run(ip);
 
-
+        //Tuleb teha korda location lookup!
         //Pollapist tuleb võtta ja teha nii, et liiga palju erqueste ei ajaks asja kokku
     }
 

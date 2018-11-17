@@ -14,12 +14,21 @@ import java.net.UnknownHostException;
 import java.util.Scanner;
 
 @Service
-public class LocationLookupService {
+public class LocationLookupService implements Runnable{
 
     @Autowired
     IPRepository ipRepository;
+    @Autowired
+    TaskExecutor taskExecutor;
 
-    public void run(String ip) {
+    private String ip;
+
+    public void updateLoc(String ip) throws IOException {
+        this.ip = ip;
+        taskExecutor.execute(this::run);
+    }
+
+    public void run() {
         String apiKey = System.getenv("IP_LOCATION_API");
         JSONObject jsonObject = new JSONObject();
         try {
@@ -28,13 +37,15 @@ public class LocationLookupService {
             Scanner scanner = new Scanner(url.openStream());
 
             jsonObject = new JSONObject(scanner.nextLine());
-            /*String country = jsonObject.getString("country_name");
-            String city = jsonObject.getString("city");
-            Double longitude = jsonObject.getDouble("longitude");
-            Double latitude = jsonObject.getDouble("latitude");
-*/
-            System.out.println(jsonObject.getString("city"));
-            //requestLocationRepository.update(ip, country, city, longitude, latitude);
+
+            try {
+                System.out.println(jsonObject.getString("city"));
+                String city = jsonObject.getString("city");
+                ipRepository.updateLocation(city, ip);
+            }
+            catch (Exception e) {
+                System.out.println("You are using localhost, there is no location for you mate");
+            }
         } catch (UnknownHostException e) {
             System.out.println("No internet connection, cannot find location");
         }

@@ -1,6 +1,7 @@
 package com.example.demo.controllers;
 
 import com.example.demo.repositories.BrowserRepository;
+import com.example.demo.repositories.IPRepository;
 import com.example.demo.repositories.OSRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,11 +18,15 @@ public class StatisticsController {
     BrowserRepository browserRepository;
     @Autowired
     OSRepository osRepository;
+    @Autowired
+    IPRepository ipRepository;
 
     @RequestMapping(value="/statistics", method = RequestMethod.GET)
     public String home(Model model){
         model.addAttribute("topBrowser", browserRepository.findBrowsers());
         model.addAttribute("topOS", osRepository.findOpSys());
+        model.addAttribute("topLocation", ipRepository.findLocation());
+
         return "statistics";
     }
 }

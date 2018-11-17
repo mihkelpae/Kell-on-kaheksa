@@ -14,8 +14,19 @@ public class IP {
     @Column(name="IP")
     private String name;
 
+    @Column(name="location")
+    private String location;
+
     @Column(name="URI")
     private String URI;
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
 
     public String getURI() {
         return URI;
@@ -29,6 +40,7 @@ public class IP {
         this.name = name;
         this.URI = URI;
     }
+    public IP() {}
 
     public Long getId() {
         return id;
