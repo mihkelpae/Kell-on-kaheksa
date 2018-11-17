@@ -9,6 +9,7 @@ import com.example.demo.services.LocationLookupService;
 import eu.bitwalker.useragentutils.Browser;
 import eu.bitwalker.useragentutils.UserAgent;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.*;
@@ -45,22 +46,28 @@ public class RequestTrackFilter implements Filter {
         String requestURI = servletRequest.getRequestURI();
 
         String os = userAgent.getOperatingSystem().getName();
-        OS opsys = new OS(os, requestURI);
-        osRepository.save(opsys);
+        try {
+            OS opsys = new OS(os, requestURI);
+            osRepository.save(opsys);
+        }
+        catch (DataIntegrityViolationException error) {
+            System.out.println(error);
+        }
 
         final String ip = request.getRemoteAddr();
         IP address = new IP(ip, requestURI);
         ipRepository.save(address);
         locationLookupService.updateLoc(ip);
 
-        Browser browser = userAgent.getBrowser();
-        String browserName = browser.getName();
-        com.example.demo.entities.Browser browserInfo = new com.example.demo.entities.Browser(browserName, requestURI);
-        browserRepository.save(browserInfo);
-
-
-        //Tuleb teha korda location lookup!
-        //Pollapist tuleb võtta ja teha nii, et liiga palju erqueste ei ajaks asja kokku
+        try {
+            Browser browser = userAgent.getBrowser();
+            String browserName = browser.getName();
+            com.example.demo.entities.Browser browserInfo = new com.example.demo.entities.Browser(browserName, requestURI);
+            browserRepository.save(browserInfo);
+        }
+        catch (DataIntegrityViolationException error) {
+            System.out.println(error);
+        }
     }
 
     @Override
