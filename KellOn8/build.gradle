@@ -33,4 +33,5 @@ dependencies {
 	compile("org.springframework.boot:spring-boot-starter-data-jpa")
 	compile("org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure:2.0.6.RELEASE")
 	compile('eu.bitwalker:UserAgentUtils:1.21')
+	compile('org.json:json:20180130')
 }

@@ -13,5 +13,5 @@ public interface BrowserRepository extends CrudRepository<Browser, Long> {
             "group by browser\n" +
             "order by kogus desc\n" +
             "limit 1", nativeQuery = true)
-    Map<Browser, Integer> findBrowsers();
+    Map<String, Integer> findBrowsers();
 }

@@ -28,7 +28,6 @@ public class IndexController {
     @RequestMapping(value="/", method = RequestMethod.GET)
     public String home(Model model, Principal principal){
         model.addAttribute("top3", productRepository.find3MostExpensive());
-        model.addAttribute("topBrowser", browserRepository.findBrowsers());
 
         return "index";
     }

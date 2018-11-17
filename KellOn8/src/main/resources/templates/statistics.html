@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html th:lang="#{language_code}" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" name="description" content="Incase you get lost, you can always get help from here. We are here for you 24/7.">
+    <th:block th:include="fragments/head :: head"/>
+    <th:block th:include="fragments/header :: header"/>
+    <title th:text="#{stat_title}"></title>
+    <div th:replace="fragments/header :: header"></div>
+</head>
+
+<body>
+
+
+<div class="container-fluid">
+
+    <div id="heading">
+        <h2 th:text="#{stat_head}"></h2>
+        <br>
+    </div>
+    <div id="mostUsedBrowser">
+        <h4 th:text="#{most_used_browser}"></h4>
+        <tr th:each="browser : ${topBrowser}">
+            <div id="browserName">
+                <td th:text="${browser}">
+                <!--<td th:text="${browser.value}">-->
+            </div>
+        </tr>
+        <br>
+    </div>
+
+    <div id="mostUsedOS">
+        <h4 th:text="#{most_used_os}"></h4>
+        <tr th:each="os : ${topOS}">
+            <div id="osName">
+                <td th:text="${os}">
+                    <!--<td th:text="${os.value}">-->
+            </div>
+        </tr>
+        <br>
+    </div>
+
+</div>
+
+</body>
+</html>

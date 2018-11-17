@@ -2,12 +2,11 @@ package com.example.demo.config;
 
 import com.example.demo.entities.IP;
 import com.example.demo.entities.OS;
-import com.example.demo.entities.User;
 import com.example.demo.repositories.BrowserRepository;
 import com.example.demo.repositories.IPRepository;
 import com.example.demo.repositories.OSRepository;
+import com.example.demo.services.LocationLookupService;
 import eu.bitwalker.useragentutils.Browser;
-import eu.bitwalker.useragentutils.OperatingSystem;
 import eu.bitwalker.useragentutils.UserAgent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -27,6 +26,9 @@ public class RequestTrackFilter implements Filter {
 
     @Autowired
     BrowserRepository browserRepository;
+
+    @Autowired
+    LocationLookupService locationLookupService;
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {}
@@ -54,6 +56,8 @@ public class RequestTrackFilter implements Filter {
         String browserName = browser.getName();
         com.example.demo.entities.Browser browserInfo = new com.example.demo.entities.Browser(browserName, requestURI);
         browserRepository.save(browserInfo);
+
+        locationLookupService.run(ip);
 
 
         //Pollapist tuleb võtta ja teha nii, et liiga palju erqueste ei ajaks asja kokku

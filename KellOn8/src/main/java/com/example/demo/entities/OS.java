@@ -11,8 +11,8 @@ public class OS {
     @Column(name = "id")
     private Long id;
 
-    @Column(name="name")
-    private String name;
+    @Column(name="opsys")
+    private String opsys;
 
     @Column(name="URI")
     private String URI;
@@ -34,15 +34,15 @@ public class OS {
     }
 
     public String getName() {
-        return name;
+        return opsys;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.opsys = name;
     }
 
     public OS(String name, String URI) {
-        this.name = name;
+        this.opsys = name;
         this.URI = URI;
     }
 
