@@ -14,7 +14,6 @@
 <div class="container-fluid">
     <div class="body">
         <div class="row">
-            <div class="col-8"  id="valitudKat"><h2 th:text="#{product_category}"></h2></div>
             <div class="col-4 float-right" id="shoppingCart">
                 <div class="dropdown">
                     <button th:text="#{cart}" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -44,9 +43,12 @@
 
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                    <button class="dropdown-item active" id="kat1Nupp" type="button">Cat1</button>
-                    <button class="dropdown-item" id="kat2Nupp" type="button">Cat2</button>
-                    <button class="dropdown-item" id="kat3Nupp" type="button">Cat3</button>
+                    <button class="dropdown-item" id="kat1Nupp" type="button" onclick="window.location.href='/käekell'" th:text="#{watch_cat}">Watch</button>
+                    <button class="dropdown-item" id="kat2Nupp" type="button" onclick="window.location.href='/taskukell'" th:text="#{pocket_cat}">Pocket clock</button>
+                    <button class="dropdown-item" id="kat3Nupp" type="button" onclick="window.location.href='/seinakell'" th:text="#{wall_cat}">Wall clock</button>
+                    <button class="dropdown-item" id="kat4Nupp" type="button" onclick="window.location.href='/äratuskell'" th:text="#{alarm_cat}">Alarm clock</button>
+                    <button class="dropdown-item" id="kat5Nupp" type="button" onclick="window.location.href='/spordikell'" th:text="#{sport_cat}">Sportwatch</button>
+                    <button class="dropdown-item" id="kat6Nupp" type="button" onclick="window.location.href='/stopper'" th:text="#{stop_cat}">Stopwatch</button>
                 </div>
             </div>
         </div>
@@ -58,7 +60,7 @@
                     <tr th:each="product : ${allProducts}">
                         <div class="col-4">
                             <div id="tootePilt">
-                                <img id="blankPicture" src="https://via.placeholder.com/250x250" alt="blank">
+                                <img id="blankPicture" src="https://via.placeholder.com/250x250" alt="blankPicture">
                             </div>
                             <div id="tooteNimi">
                                 <td th:text="${product.productName}">
@@ -79,6 +81,5 @@
         </div>
     </div>
 </div>
-
 </body>
 </html>

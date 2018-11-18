@@ -7,14 +7,13 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-import java.util.Map;
 
 @Repository
 public interface ProductRepository extends CrudRepository<Product, Long> {
 
     //Leia tooted kategooria järgi
-    @Query(value="select * from products where category = :cat", nativeQuery = true)
-    List<Product> findByCategory(@Param("cat") String category);
+    @Query(value="select * from products where category = (:cat)", nativeQuery = true)
+    List<Product> findByCategory(@Param("cat") String cat);
 
     //Leian kolm kõige kallimat toodet
     @Query(value="select * from products order by price desc limit 3", nativeQuery = true)
