@@ -53,3 +53,7 @@ body {
 .tooltip:hover .tooltiptext {
     visibility: visible;
 }
+
+#homePageLogo {
+    width: 85%;
+}
