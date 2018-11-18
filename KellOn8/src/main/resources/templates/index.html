@@ -61,7 +61,7 @@
             <div class="col-12" id="loadMail">
                 <form action="#" th:action="@{/mailSent}" method="post">
                     <p th:text="#{newsletter}">
-                    <p>Email: <input type="email" name="address" th:required="required">
+                    <p>Email: <input type="email" label="emailArea" id="emailBox" name="address" th:required="required">
                     <p><input class="btn-dark" type="submit" th:value="#{submit}">
                 </form>
             </div>

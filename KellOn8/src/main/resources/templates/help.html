@@ -21,7 +21,7 @@
     <h3 th:text="#{leave_us_reply}"></h3>
 
     <form action="#" th:action="@{/replySaved}" th:object="${review}" method="post">
-        <p th:text="#{user_reply_input}"></p><input type="text" th:field="*{reply}" th:required="required" />
+        <p th:text="#{user_reply_input}"></p><input type="text" label="text" th:field="*{reply}" th:required="required" />
         <p><input type="submit" th:value="#{submit_form}"></p>
     </form>
 </div>
