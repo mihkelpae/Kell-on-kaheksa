@@ -18,34 +18,27 @@
     </div>
     <div id="mostUsedBrowser">
         <h4 th:text="#{most_used_browser}"></h4>
-        <tr th:each="browser : ${topBrowser}">
-            <div id="browserName">
-                <td th:text="${browser}">
-                <!--<td th:text="${browser.value}">-->
-            </div>
-        </tr>
+        <div th:each="browser : ${topBrowser}">
+            <h6 th:text="${browser}"></h6>
+            <!--<td th:text="${browser.value}">-->
+        </div>
         <br>
     </div>
 
     <div id="mostUsedOS">
         <h4 th:text="#{most_used_os}"></h4>
-        <tr th:each="os : ${topOS}">
-            <div id="osName">
-                <td th:text="${os}">
-                    <!--<td th:text="${os.value}">-->
-            </div>
-        </tr>
+        <div th:each="os : ${topOS}">
+            <h6 th:text="${os}"></h6>
+            <!--<td th:text="${os.value}">-->
+        </div>
         <br>
     </div>
 
     <div id="mostVisitedPage">
         <h4 th:text="#{most_visited_page}"></h4>
-        <tr th:each="page : ${mostVisitedPage}">
-            <div id="pageName">
-                <td th:text="${page}">
-                    <!--<td th:text="${os.value}">-->
-            </div>
-        </tr>
+        <div th:each="page : ${mostVisitedPage}">
+            <h6 th:text="${page}"></h6>
+        </div>
         <br>
     </div>
 
