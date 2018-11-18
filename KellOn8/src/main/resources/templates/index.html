@@ -2,13 +2,12 @@
 <html th:lang="#{language_code}" xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Kell on kaheksa</title>
-    <meta name="description" content="Welcome to Kellon8 website! Go get yourself a watch.">
+    <meta name="description" content="Welcome to Kellon8 website! Go get yourself a watch."/>
     <th:block th:include="fragments/head :: head"/>
-    <th:block th:include="fragments/header :: header"/>
     <script src="/static/javascript/loadMore.js"></script>
 </head>
-
 <body>
+<div th:replace="fragments/header :: header"></div>
 
 <div class="container-fluid">
     <div class="body">
