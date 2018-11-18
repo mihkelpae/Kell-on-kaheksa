@@ -1,15 +1,11 @@
 package com.example.demo.config;
 
-import com.example.demo.entities.IP;
 import com.example.demo.entities.OS;
 import com.example.demo.repositories.BrowserRepository;
-import com.example.demo.repositories.IPRepository;
 import com.example.demo.repositories.OSRepository;
-import com.example.demo.services.LocationLookupService;
 import eu.bitwalker.useragentutils.Browser;
 import eu.bitwalker.useragentutils.UserAgent;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.*;
@@ -23,13 +19,7 @@ public class RequestTrackFilter implements Filter {
     OSRepository osRepository;
 
     @Autowired
-    IPRepository ipRepository;
-
-    @Autowired
     BrowserRepository browserRepository;
-
-    @Autowired
-    LocationLookupService locationLookupService;
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {}
@@ -49,13 +39,6 @@ public class RequestTrackFilter implements Filter {
 
         OS opsys = new OS(os, requestURI);
         osRepository.save(opsys);
-
-
-        final String ip = request.getRemoteAddr();
-        IP address = new IP(ip, requestURI);
-        ipRepository.save(address);
-        locationLookupService.updateLoc(ip);
-
 
         Browser browser = userAgent.getBrowser();
         String browserName = browser.getName();

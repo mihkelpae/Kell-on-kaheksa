@@ -39,16 +39,17 @@
         <br>
     </div>
 
-    <div id="mostLocation">
-        <h4 th:text="#{most_used_location}"></h4>
-        <tr th:each="location : ${topLocation}">
-            <div id="location">
-                <td th:text="${location}">
+    <div id="mostVisitedPage">
+        <h4 th:text="#{most_visited_page}"></h4>
+        <tr th:each="page : ${mostVisitedPage}">
+            <div id="pageName">
+                <td th:text="${page}">
                     <!--<td th:text="${os.value}">-->
             </div>
         </tr>
         <br>
     </div>
+
 
 </div>
 
