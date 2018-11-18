@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html th:lang="#{language_code}" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8" name="description" content="Upload a profile of yours so we can truly see who you are. ">
+    <title th:text="#{profile_title}"></title>
+    <meta name="description" content="Upload a profile of yours so we can truly see who you are. ">
     <th:block th:include="fragments/head :: head"/>
-    <th:block th:include="fragments/header :: header"/>
-    <title>Profile</title>
-    <div th:replace="fragments/header :: header"></div>
 </head>
 
 <body>
+
+<div th:replace="fragments/header :: header"></div>
 
 <div class="container-fluid">
     <div class="body">
