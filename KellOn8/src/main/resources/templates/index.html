@@ -56,7 +56,7 @@
 
             <!--Sending automatic e-mails-->
             <div class="col-2 offset-4" id="loadMore" >
-                <button onclick="loadMail()" class="btn-info" data-toggle="tooltip" title="Siia vajutades laetakse rohkem sisu" th:text="#{loadMore}"></button>
+                <button onclick="loadMail()" class="btn-info" th:text="#{loadMore}"></button>
             </div>
             <div class="col-12" id="loadMail">
                 <form action="#" th:action="@{/mailSent}" method="post">

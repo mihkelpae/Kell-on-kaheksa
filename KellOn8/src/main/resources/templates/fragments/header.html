@@ -11,22 +11,22 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="/" data-toggle="tooltip" title="Siit navigeerid kodulehele" th:text="#{home}"><span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/" data-toggle="tooltip" th:title="#{tootltip_home}" th:text="#{home}"><span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="products" data-toggle="tooltip" title="Siit navigeerid toodete lehele" th:text="#{products}"></a>
+                    <a class="nav-link" href="products" data-toggle="tooltip" th:title="#{tooltip_products}" th:text="#{products}"></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="about" data-toggle="tooltip" title="Siit navigeerid meie info lehele" th:text="#{about_us}"></a>
+                    <a class="nav-link" href="about" data-toggle="tooltip" th:title="#{tooltip_info}" th:text="#{about_us}"></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="help" data-toggle="tooltip" title="Siit navigeerid hetkel tühjale lehele" th:text="#{help}"></a>
+                    <a class="nav-link" href="help" data-toggle="tooltip" th:title="#{tooltip_help}" th:text="#{help}"></a>
                 </li>
                 <li class="nav-item" th:if="${user!=null}">
-                    <a class="nav-link" href="profile" data-toggle="tooltip" title="Profiil" th:text="#{profile_page}"></a>
+                    <a class="nav-link" href="profile" data-toggle="tooltip" th:title="#{profile_page}" th:text="#{profile_page}"></a>
                 </li>
                 <li class="nav-item" th:if="${user!=null}">
-                    <a class="nav-link" href="addProducts" data-toggle="tooltip" title="Siin saab tulevikus toodeid lisada" th:text="#{add_products}"></a>
+                    <a class="nav-link" href="addProducts" data-toggle="tooltip" th:title="#{tooltip_add_products}" th:text="#{add_products}"></a>
                 </li>
                 <li class="nav-item" th:if="${user==null}">
                     <a class="btn btn-block btn-social btn-google" href="/login" th:text="#{login_w_google}">
