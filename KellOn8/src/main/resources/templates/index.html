@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html th:lang="#{language_code}" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<html th:lang="#{language_code}" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8" name="description" content="Welcome to Kellon8 website! Go get yourself a watch. ">
+    <title>Kell on kaheksa</title>
+    <meta charset="UTF-8"/>
+    <meta name="description" content="Welcome to Kellon8 website! Go get yourself a watch.">
     <th:block th:include="fragments/head :: head"/>
     <th:block th:include="fragments/header :: header"/>
-    <title>Kell on kaheksa</title>
     <div th:replace="fragments/header :: header"></div>
 </head>
 <script src="/static/javascript/loadMore.js"></script>
@@ -62,9 +63,9 @@
             </div>
             <div class="col-12" id="loadMail">
                 <form action="#" th:action="@{/mailSent}" method="post">
-                    <p th:text="#{newsletter}"></p>
-                    <p>Email: <input type="email" name="address" th:required="required"/></p>
-                    <p><input class="btn-dark" type="submit" th:value="#{submit}"/></p>
+                    <p th:text="#{newsletter}">
+                    <p>Email: <input type="email" name="address" th:required="required">
+                    <p><input class="btn-dark" type="submit" th:value="#{submit}">
                 </form>
             </div>
 
