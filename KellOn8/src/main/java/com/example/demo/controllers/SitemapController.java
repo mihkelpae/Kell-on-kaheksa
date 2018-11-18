@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-public class AboutController {
+public class SitemapController {
 
-    @RequestMapping(value = "/about", method = RequestMethod.GET)
+    @RequestMapping(value = "/sitemap", method = RequestMethod.GET)
     public String index(Model model) {
-        return "about";
+        return "sitemap";
     }
 }

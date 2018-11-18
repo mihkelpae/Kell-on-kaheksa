@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html th:lang="#{language_code}" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="#{sitemap_title}"></title>
+    <meta name="description" content="This is the sitemap">
+    <th:block th:include="fragments/head :: head"/>
+</head>
+
+<body>
+
+<div th:replace="fragments/header :: header"></div>
+
+<div class="container-fluid">
+    <h2 th:text="#{sitemap_title}"></h2>
+    <div class="col-12">
+        <div class="row align-items-center">
+            <div class="col-6">
+                <h4 th:text="#{sitemap_functions}"></h4>
+
+                <a href="/" th:text="#{homepage}"/>
+                <br>
+                <a href="/products" th:text="#{products_title}"/>
+                <br>
+                <a href="/about" th:text="#{about_title}"/>
+                <br>
+                <a href="/help" th:text="#{help_title}"/>
+                <br>
+                <a href="/profile" th:text="#{profile_sitemap}"/>
+            </div>
+            <div class="col-6">
+                <h4 th:text="#{sitemap_more}"></h4>
+
+                <a href="/statistics" th:text="#{stats}"/>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
